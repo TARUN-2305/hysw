@@ -223,7 +223,7 @@ lim.forEach(([h, d], i) => { const x = .6 + (i % 2) * 4.5, y = 1.35 + Math.floor
 slide(true, "Exact search in about a second on a laptop, and a measured answer to why twelve threads are not twelve times faster. Code, tests and raw results are in the repository.");
 T("Exact search in about a second, and a measured answer to why 12 threads aren't 12× faster", { x: .6, y: 1.1, w: 5.2, h: 2.3, size: 30, bold: true, color: C.white });
 IMG("title2", art.title(), 6.0, 1.0, 3.5, 3.0);
-body("Code, tests and raw results: github.com/TARUN-2305/hysw (private)", .6, 3.9, 5.2, .6, { color: C.grey, size: 14 });
+body("Code, tests and raw results: github.com/TARUN-2305/hysw", .6, 3.9, 5.2, .6, { color: C.grey, size: 14 });
 T("Thank you", { x: .6, y: 4.6, w: 4, h: .5, size: 20, bold: true, color: C.yellow });
 
 // ---- render images -------------------------------------------------------------------------
