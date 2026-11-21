@@ -1,0 +1,92 @@
+{
+ "command": [
+  "bench/run_bench.py",
+  "--db",
+  "data/ecoli_x20.bin",
+  "--queries",
+  "bench/queries_sweep6.fasta",
+  "--rounds",
+  "5",
+  "--set",
+  "simd:1:dynamic,1:query;simd:1:dynamic,1:full;simd_untiled:1:dynamic,1:query;simd:4:dynamic,1:query;simd:4:dynamic,1:full;simd_untiled:4:dynamic,1:query;simd:physical:dynamic,1:query;simd:physical:dynamic,1:full;simd_untiled:physical:dynamic,1:query;",
+  "--regime",
+  "sustained",
+  "--out",
+  "results/m6/e5_querylen_profile.csv"
+ ],
+ "started": "2026-11-21T17:22:46",
+ "configs": [
+  "simd:1:dynamic,1:query",
+  "simd:1:dynamic,1:full",
+  "simd_untiled:1:dynamic,1:query",
+  "simd:4:dynamic,1:query",
+  "simd:4:dynamic,1:full",
+  "simd_untiled:4:dynamic,1:query",
+  "simd:physical:dynamic,1:query",
+  "simd:physical:dynamic,1:full",
+  "simd_untiled:physical:dynamic,1:query"
+ ],
+ "rounds": 5,
+ "regime": "sustained",
+ "seed": 20261120,
+ "condition_s": 2.0,
+ "cooldown_s": 0,
+ "orders": [
+  [
+   "simd_untiled:1:dynamic,1:query",
+   "simd:4:dynamic,1:query",
+   "simd:physical:dynamic,1:full",
+   "simd_untiled:physical:dynamic,1:query",
+   "simd_untiled:4:dynamic,1:query",
+   "simd:1:dynamic,1:query",
+   "simd:1:dynamic,1:full",
+   "simd:4:dynamic,1:full",
+   "simd:physical:dynamic,1:query"
+  ],
+  [
+   "simd:physical:dynamic,1:full",
+   "simd_untiled:1:dynamic,1:query",
+   "simd:physical:dynamic,1:query",
+   "simd_untiled:physical:dynamic,1:query",
+   "simd:4:dynamic,1:full",
+   "simd:4:dynamic,1:query",
+   "simd:1:dynamic,1:full",
+   "simd:1:dynamic,1:query",
+   "simd_untiled:4:dynamic,1:query"
+  ],
+  [
+   "simd_untiled:physical:dynamic,1:query",
+   "simd:physical:dynamic,1:query",
+   "simd_untiled:1:dynamic,1:query",
+   "simd:4:dynamic,1:query",
+   "simd:1:dynamic,1:full",
+   "simd:4:dynamic,1:full",
+   "simd:1:dynamic,1:query",
+   "simd_untiled:4:dynamic,1:query",
+   "simd:physical:dynamic,1:full"
+  ],
+  [
+   "simd:physical:dynamic,1:query",
+   "simd:physical:dynamic,1:full",
+   "simd_untiled:1:dynamic,1:query",
+   "simd:4:dynamic,1:query",
+   "simd_untiled:4:dynamic,1:query",
+   "simd:1:dynamic,1:query",
+   "simd:4:dynamic,1:full",
+   "simd_untiled:physical:dynamic,1:query",
+   "simd:1:dynamic,1:full"
+  ],
+  [
+   "simd:4:dynamic,1:full",
+   "simd:physical:dynamic,1:full",
+   "simd:1:dynamic,1:query",
+   "simd:4:dynamic,1:query",
+   "simd_untiled:physical:dynamic,1:query",
+   "simd:physical:dynamic,1:query",
+   "simd_untiled:1:dynamic,1:query",
+   "simd:1:dynamic,1:full",
+   "simd_untiled:4:dynamic,1:query"
+  ]
+ ],
+ "finished": "2026-11-21T17:41:15"
+}

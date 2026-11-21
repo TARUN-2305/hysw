@@ -1,0 +1,82 @@
+### SIMD SW, database x20 (88,060 sequences), all 12 CPUs, 5 rounds, RANDOMISED order + conditioning
+swsearch: 88060 sequences, 27088840 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=12
+database replicated x20: scalar run skipped; 'speedup' below is relative to ONE-THREAD SIMD
+one thread, SIMD batches of 16: 4.341 s = 9.61 GCUPS, 1.0x over scalar, scores identical to scalar
+sequential scalar (cpu0): 4.341 s for 3 queries = 9.61 GCUPS (billion cell updates per second)
+  raw static             3.766 3.656 3.453 3.398 3.543
+  raw dynamic,1          3.040 3.020 2.905 2.780 2.795
+  raw dynamic,n/8T       3.058 2.795 2.831 2.880 2.990
+  raw guided             3.564 4.313 4.171 3.461 3.433
+  raw steal              3.092 2.858 2.773 2.740 2.888
+  raw share+steal        3.070 3.169 2.830 2.940 2.820
+  raw cost+steal         3.029 2.881 2.862 2.846 2.887
+  raw cost*cap+steal     3.196 2.762 2.813 2.789 2.948
+  raw cost*cap(no steal) 1.914 3.141 3.008 3.061 2.978
+schedule             total_s  speedup   regret    steals  output
+static                 3.543     1.23   +26.0%       0.0  identical scores
+dynamic,1              2.905     1.49    +3.3%       0.0  identical scores
+dynamic,n/8T           2.880     1.51    +2.4%       0.0  identical scores
+guided                 3.564     1.22   +26.7%       0.0  identical scores
+steal                  2.858     1.52    +1.6%      24.7  identical scores
+share+steal            2.940     1.48    +4.5%      26.3  identical scores
+cost+steal             2.881     1.51    +2.4%      23.3  identical scores
+cost*cap+steal         2.813     1.54    +0.0%      24.0  identical scores
+cost*cap(no steal)     3.008     1.44    +6.9%       0.0  identical scores
+  cost*cap+steal final per-thread speeds: 0.073 0.062 0.069 0.074 0.090 0.091 0.091 0.091 0.090 0.091 0.086 0.091
+
+### SIMD SW, database x20, one thread per physical core, 4 rounds
+swsearch: 88060 sequences, 27088840 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=10
+database replicated x20: scalar run skipped; 'speedup' below is relative to ONE-THREAD SIMD
+one thread, SIMD batches of 16: 4.465 s = 9.34 GCUPS, 1.0x over scalar, scores identical to scalar
+sequential scalar (cpu0): 4.465 s for 3 queries = 9.34 GCUPS (billion cell updates per second)
+  raw static             3.433 3.281 3.211 3.211
+  raw dynamic,1          2.830 2.708 2.710 2.678
+  raw dynamic,n/8T       2.730 2.765 2.707 2.686
+  raw steal              2.721 2.703 2.672 2.701
+  raw cost+steal         2.811 2.717 2.671 2.654
+  raw cost*cap+steal     2.696 2.630 2.661 2.644
+schedule             total_s  speedup   regret    steals  output
+static                 3.281     1.36   +23.3%       0.0  identical scores
+dynamic,1              2.710     1.65    +1.8%       0.0  identical scores
+dynamic,n/8T           2.730     1.64    +2.6%       0.0  identical scores
+steal                  2.703     1.65    +1.6%      18.3  identical scores
+cost+steal             2.717     1.64    +2.1%      17.3  identical scores
+cost*cap+steal         2.661     1.68    +0.0%      21.3  identical scores
+  cost*cap+steal final per-thread speeds: 0.136 0.128 0.093 0.091 0.093 0.093 0.092 0.090 0.092 0.093
+
+### SIMD SW, database x20, P-cores only (4 hyperthreads), 3 rounds
+swsearch: 88060 sequences, 27088840 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=4
+database replicated x20: scalar run skipped; 'speedup' below is relative to ONE-THREAD SIMD
+one thread, SIMD batches of 16: 4.370 s = 9.55 GCUPS, 1.0x over scalar, scores identical to scalar
+sequential scalar (cpu0): 4.370 s for 3 queries = 9.55 GCUPS (billion cell updates per second)
+  raw static             4.591 4.553 4.633
+  raw dynamic,1          3.681 3.596 3.581
+  raw steal              3.771 3.614 3.628
+schedule             total_s  speedup   regret    steals  output
+static                 4.591     0.95   +27.7%       0.0  identical scores
+dynamic,1              3.596     1.22    +0.0%       0.0  identical scores
+steal                  3.628     1.20    +0.9%       9.0  identical scores
+
+### SCALAR SW length-sorted, all 12 CPUs, 5 rounds, RANDOMISED
+swsearch: 4403 sequences, 1354442 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=12
+sequential (cpu0): 2.702 s for 3 queries = 0.77 GCUPS (billion cell updates per second)
+  raw static             1.102 1.644 1.608 1.599 1.581
+  raw dynamic,1          1.091 1.098 1.115 1.095 1.093
+  raw dynamic,n/8T       0.821 1.096 1.093 1.083 1.099
+  raw guided             1.788 1.530 1.991 1.608 1.941
+  raw steal              1.099 1.138 1.067 1.092 1.095
+  raw share+steal        1.123 1.086 1.083 1.081 1.086
+  raw cost+steal         1.234 1.099 1.107 1.090 1.071
+  raw cost*cap+steal     1.103 1.094 1.071 1.064 1.137
+  raw cost*cap(no steal) 0.799 1.184 1.169 1.189 1.131
+schedule             total_s  speedup   regret    steals  output
+static                 1.599     1.69   +47.3%       0.0  identical scores
+dynamic,1              1.095     2.47    +0.9%       0.0  identical scores
+dynamic,n/8T           1.093     2.47    +0.7%       0.0  identical scores
+guided                 1.788     1.51   +64.7%       0.0  identical scores
+steal                  1.095     2.47    +0.9%      22.0  identical scores
+share+steal            1.086     2.49    +0.0%      21.0  identical scores
+cost+steal             1.099     2.46    +1.3%      16.0  identical scores
+cost*cap+steal         1.094     2.47    +0.7%      14.0  identical scores
+cost*cap(no steal)     1.169     2.31    +7.7%       0.0  identical scores
+  cost*cap+steal final per-thread speeds: 0.085 0.085 0.080 0.077 0.082 0.085 0.084 0.081 0.085 0.085 0.085 0.085

@@ -1,0 +1,23 @@
+### P-cores only, 4 hyperthreads (cpus 0-3)
+kernel=uniform N=480 sweeps=12 threads=4 seq_per_sweep_on_cpu0=0.429678s
+static              per_sweep median=0.124631s min=0.124582s max=0.124644s speedup_vs_seqP=3.45 regret_vs_best=+0.0% checksum=exact
+dynamic,1           per_sweep median=0.124661s min=0.124547s max=0.124710s speedup_vs_seqP=3.45 regret_vs_best=+0.0% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.124632s min=0.124605s max=0.124672s speedup_vs_seqP=3.45 regret_vs_best=+0.0% checksum=exact
+guided              per_sweep median=0.124685s min=0.124533s max=0.124755s speedup_vs_seqP=3.45 regret_vs_best=+0.0% checksum=exact
+WS(weighted+steal)  per_sweep median=0.124651s min=0.124541s max=0.124750s speedup_vs_seqP=3.45 regret_vs_best=+0.0% checksum=exact first_sweep(cold)=0.124530s steals_per_sweep=0.0
+
+### E-cores only (cpus 4-11)
+kernel=uniform N=480 sweeps=12 threads=8 seq_per_sweep_on_cpu4=0.865918s
+static              per_sweep median=0.114191s min=0.109111s max=0.136062s speedup_vs_seqP=7.58 regret_vs_best=+4.6% checksum=exact
+dynamic,1           per_sweep median=0.109223s min=0.109059s max=0.135618s speedup_vs_seqP=7.93 regret_vs_best=+0.1% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.114514s min=0.114461s max=0.141597s speedup_vs_seqP=7.56 regret_vs_best=+4.9% checksum=exact
+guided              per_sweep median=0.109141s min=0.109047s max=0.136613s speedup_vs_seqP=7.93 regret_vs_best=+0.0% checksum=exact
+WS(weighted+steal)  per_sweep median=0.109335s min=0.109326s max=0.136760s speedup_vs_seqP=7.92 regret_vs_best=+0.2% checksum=exact first_sweep(cold)=0.136420s steals_per_sweep=0.0
+
+### one thread per physical core (cpus 0,2,4-11)
+kernel=uniform N=480 sweeps=12 threads=10 seq_per_sweep_on_cpu0=0.425949s
+static              per_sweep median=0.092305s min=0.090634s max=0.123737s speedup_vs_seqP=4.61 regret_vs_best=+12.2% checksum=exact
+dynamic,1           per_sweep median=0.082266s min=0.082142s max=0.110358s speedup_vs_seqP=5.18 regret_vs_best=+0.0% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.088821s min=0.084786s max=0.089999s speedup_vs_seqP=4.80 regret_vs_best=+8.0% checksum=exact
+guided              per_sweep median=0.090766s min=0.090419s max=0.121759s speedup_vs_seqP=4.69 regret_vs_best=+10.3% checksum=exact
+WS(weighted+steal)  per_sweep median=0.082440s min=0.081836s max=0.111642s speedup_vs_seqP=5.17 regret_vs_best=+0.2% checksum=exact first_sweep(cold)=0.107223s steals_per_sweep=5.8

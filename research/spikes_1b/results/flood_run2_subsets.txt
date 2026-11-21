@@ -1,0 +1,116 @@
+### FLOOD rain 10/20 min, cpus=0,2, 3 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=rain source=10 min total=20 min, threads=2
+sequential (cpu0): 1.730 s  [source phase 0.766 s, 60 steps, wet 73% | recession 0.964 s, 92 steps, wet 50%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             0.985 1.396 1.386
+  raw dynamic,n/8T       0.974 0.967 1.354
+  raw steal              0.974 0.968 1.376
+  raw cost*cap+steal     0.963 1.094 1.391
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 1.386     1.25   +42.3%    0.610    0.776       0.0  bit-identical
+dynamic,n/8T           0.974     1.78    +0.0%    0.428    0.546       0.0  bit-identical
+steal                  0.974     1.78    +0.0%    0.423    0.550       1.2  bit-identical
+cost*cap+steal         1.094     1.58   +12.3%    0.423    0.672       1.6  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.501 0.499
+
+### FLOOD rain 10/20 min, cpus=0,1,2,3, 3 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=rain source=10 min total=20 min, threads=4
+sequential (cpu0): 1.720 s  [source phase 0.749 s, 60 steps, wet 73% | recession 0.971 s, 92 steps, wet 50%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             0.743 0.921 1.120
+  raw dynamic,n/8T       0.743 0.745 1.098
+  raw steal              0.736 0.732 1.095
+  raw cost*cap+steal     0.740 0.740 1.109
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 0.921     1.87   +25.2%    0.342    0.579       0.0  bit-identical
+dynamic,n/8T           0.745     2.31    +1.2%    0.325    0.420       0.0  bit-identical
+steal                  0.736     2.34    +0.0%    0.323    0.414       3.0  bit-identical
+cost*cap+steal         0.740     2.33    +0.5%    0.324    0.416       3.1  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.251 0.249 0.253 0.247
+
+### FLOOD rain 10/20 min, cpus=4,5,6,7,8,9,10,11, 3 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=rain source=10 min total=20 min, threads=8
+sequential (cpu4): 2.816 s  [source phase 1.242 s, 60 steps, wet 73% | recession 1.574 s, 92 steps, wet 50%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             0.473 0.513 0.494
+  raw dynamic,n/8T       0.470 0.468 0.483
+  raw steal              0.472 0.472 0.481
+  raw cost*cap+steal     0.472 0.472 0.483
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 0.494     5.70    +5.0%    0.217    0.276       0.0  bit-identical
+dynamic,n/8T           0.470     5.99    +0.0%    0.206    0.265       0.0  bit-identical
+steal                  0.472     5.96    +0.4%    0.207    0.265       4.9  bit-identical
+cost*cap+steal         0.472     5.96    +0.4%    0.207    0.266       3.7  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.126 0.128 0.125 0.124 0.124 0.124 0.125 0.125
+
+### FLOOD rain 10/20 min, cpus=0,2,4,5,6,7,8,9,10,11, 3 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=rain source=10 min total=20 min, threads=10
+sequential (cpu0): 1.729 s  [source phase 0.753 s, 60 steps, wet 73% | recession 0.976 s, 92 steps, wet 50%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             0.466 0.678 0.459
+  raw dynamic,n/8T       0.440 0.466 0.426
+  raw steal              0.403 0.404 0.396
+  raw cost*cap+steal     0.485 0.403 0.399
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 0.466     3.71   +15.7%    0.199    0.267       0.0  bit-identical
+dynamic,n/8T           0.440     3.93    +9.3%    0.199    0.242       0.0  bit-identical
+steal                  0.403     4.29    +0.0%    0.175    0.226      13.5  bit-identical
+cost*cap+steal         0.403     4.30    +0.0%    0.178    0.224       6.8  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.135 0.134 0.092 0.091 0.092 0.091 0.091 0.091 0.092 0.091
+
+### FLOOD rain 10/20 min, cpus=0,1,2,3,4,5,6,7,8,9,10,11, 3 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=rain source=10 min total=20 min, threads=12
+sequential (cpu0): 1.723 s  [source phase 0.753 s, 60 steps, wet 73% | recession 0.970 s, 92 steps, wet 50%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             0.429 0.440 0.426
+  raw dynamic,n/8T       0.416 0.419 0.406
+  raw steal              0.406 0.418 0.416
+  raw cost*cap+steal     0.407 0.416 0.406
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 0.429     4.02    +5.3%    0.184    0.253       0.0  bit-identical
+dynamic,n/8T           0.416     4.14    +2.1%    0.180    0.229       0.0  bit-identical
+steal                  0.416     4.14    +2.3%    0.175    0.234      10.9  bit-identical
+cost*cap+steal         0.407     4.23    +0.0%    0.178    0.234       9.4  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.088 0.083 0.090 0.086 0.081 0.082 0.083 0.081 0.080 0.081 0.083 0.082
+
+### FLOOD multi-inflow 60/90 min, one thread per physical core (0,2,4,5,6,7,8,9,10,11), 5 rounds
+flood: grid 768x768 (23.0 km square), elevation 736-993 m, scenario=breach source=60 min total=90 min, threads=10
+sequential (cpu0): 3.430 s  [source phase 1.761 s, 2204 steps, wet 2% | recession 1.669 s, 1157 steps, wet 4%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 0 m3, repeat-run hash identical
+  raw static             1.939 2.748 2.739 2.688 2.712
+  raw dynamic,1          1.868 2.036 1.939 1.908 1.915
+  raw dynamic,n/8T       1.817 1.736 1.626 1.705 1.713
+  raw guided             2.297 2.241 2.286 2.243 2.250
+  raw steal              1.671 1.572 1.552 1.556 1.616
+  raw share+steal        1.616 1.580 1.562 1.564 1.560
+  raw cost+steal         1.670 1.606 1.588 1.570 1.673
+  raw cost*cap+steal     1.621 1.614 1.608 1.587 1.835
+  raw cost*cap(no steal) 1.659 1.652 1.657 1.648 1.652
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 2.712     1.26   +73.4%    1.565    1.142       0.0  bit-identical
+dynamic,1              1.915     1.79   +22.5%    0.982    0.930       0.0  bit-identical
+dynamic,n/8T           1.713     2.00    +9.5%    0.936    0.780       0.0  bit-identical
+guided                 2.250     1.52   +43.9%    1.344    0.912       0.0  bit-identical
+steal                  1.572     2.18    +0.5%    0.835    0.738      18.0  bit-identical
+share+steal            1.564     2.19    +0.0%    0.854    0.716      11.7  bit-identical
+cost+steal             1.606     2.13    +2.7%    0.861    0.740      12.4  bit-identical
+cost*cap+steal         1.614     2.13    +3.2%    0.861    0.743       9.7  bit-identical
+cost*cap(no steal)     1.652     2.08    +5.7%    0.872    0.780       0.0  bit-identical
+  share+steal final per-thread shares (loop A): 0.229 0.030 0.067 0.093 0.081 0.087 0.126 0.069 0.064 0.154
+  cost*cap+steal final per-thread speeds (loop A): 0.100 0.078 0.103 0.103 0.102 0.104 0.100 0.105 0.102 0.102
+  cost*cap(no steal) final per-thread speeds (loop A): 0.111 0.110 0.097 0.098 0.098 0.100 0.095 0.101 0.097 0.094
+
+### FLOOD rain 5/10 min on 2048x2048 grid, all 12 CPUs, 2 rounds
+flood: grid 2048x2048 (61.4 km square), elevation 347-1290 m, scenario=rain source=5 min total=10 min, threads=12
+sequential (cpu0): 4.984 s  [source phase 2.365 s, 30 steps, wet 67% | recession 2.618 s, 31 steps, wet 59%]
+mass check: stored/inflow = 1.000000, clamped (negative-depth) volume = 2.08e-06 m3, repeat-run hash identical
+  raw static             1.929 2.284
+  raw dynamic,n/8T       2.346 2.186
+  raw steal              2.276 2.122
+  raw cost*cap+steal     2.172 2.111
+schedule             total_s  speedup   regret source_s recess_s   stealsA  output
+static                 2.284     2.18    +5.2%    1.099    1.220       0.0  bit-identical
+dynamic,n/8T           2.346     2.12    +8.0%    1.092    1.254       0.0  bit-identical
+steal                  2.276     2.19    +4.8%    1.075    1.202      25.0  bit-identical
+cost*cap+steal         2.172     2.29    +0.0%    1.028    1.144      21.8  bit-identical
+  cost*cap+steal final per-thread speeds (loop A): 0.061 0.061 0.047 0.043 0.096 0.090 0.101 0.100 0.097 0.102 0.101 0.102

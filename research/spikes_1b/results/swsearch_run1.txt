@@ -1,0 +1,71 @@
+### SW file order, all 12 CPUs, 7 rounds
+swsearch: 4403 sequences, 1354442 residues (longest 2339), order=file, queries of length 150/400/990, threads=12
+sequential (cpu0): 2.714 s for 3 queries = 0.77 GCUPS (billion cell updates per second)
+  raw static             0.828 1.314 1.319 1.321 1.329 1.299 1.351
+  raw dynamic,1          0.717 1.184 1.076 1.089 1.108 1.117 1.114
+  raw dynamic,n/8T       0.747 1.284 1.131 1.203 1.195 1.214 1.195
+  raw guided             0.881 1.350 1.379 1.334 1.317 1.338 1.290
+  raw steal              0.717 1.127 1.065 1.100 1.150 1.072 1.120
+  raw share+steal        0.732 1.208 1.183 1.193 1.171 1.056 1.174
+  raw cost+steal         0.727 1.217 1.196 1.182 1.169 1.140 1.176
+  raw cost*cap+steal     0.737 1.204 1.198 1.160 1.183 1.173 1.178
+  raw cost*cap(no steal) 1.301 1.315 1.265 1.263 1.278 1.294 1.248
+schedule             total_s  speedup   regret    steals  output
+static                 1.319     2.06   +19.9%       0.0  identical scores
+dynamic,1              1.108     2.45    +0.7%       0.0  identical scores
+dynamic,n/8T           1.195     2.27    +8.6%       0.0  identical scores
+guided                 1.334     2.03   +21.2%       0.0  identical scores
+steal                  1.100     2.47    +0.0%      20.7  identical scores
+share+steal            1.174     2.31    +6.7%      22.3  identical scores
+cost+steal             1.176     2.31    +6.9%      15.7  identical scores
+cost*cap+steal         1.178     2.30    +7.1%      17.7  identical scores
+cost*cap(no steal)     1.278     2.12   +16.1%       0.0  identical scores
+  cost*cap+steal final per-thread speeds: 0.069 0.083 0.076 0.077 0.087 0.087 0.087 0.088 0.087 0.086 0.086 0.087
+
+### SW length-sorted, all 12 CPUs, 7 rounds
+swsearch: 4403 sequences, 1354442 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=12
+sequential (cpu0): 2.722 s for 3 queries = 0.77 GCUPS (billion cell updates per second)
+  raw static             1.109 1.778 1.792 1.766 1.742 1.712 1.718
+  raw dynamic,1          0.765 1.202 1.061 1.140 1.072 1.053 1.032
+  raw dynamic,n/8T       0.852 1.244 1.068 1.272 1.270 1.251 1.238
+  raw guided             1.599 2.061 1.910 2.201 2.175 1.872 2.117
+  raw steal              0.743 0.958 1.032 0.987 1.226 1.020 0.940
+  raw share+steal        0.753 1.274 1.248 1.212 1.242 0.983 1.193
+  raw cost+steal         0.747 1.292 1.269 1.194 1.211 1.220 1.222
+  raw cost*cap+steal     1.164 1.310 1.307 1.213 1.223 1.227 1.220
+  raw cost*cap(no steal) 1.447 1.355 1.295 1.270 1.367 1.326 1.290
+schedule             total_s  speedup   regret    steals  output
+static                 1.742     1.56   +76.4%       0.0  identical scores
+dynamic,1              1.061     2.57    +7.5%       0.0  identical scores
+dynamic,n/8T           1.244     2.19   +26.1%       0.0  identical scores
+guided                 2.061     1.32  +108.8%       0.0  identical scores
+steal                  0.987     2.76    +0.0%      20.3  identical scores
+share+steal            1.212     2.25   +22.8%      23.0  identical scores
+cost+steal             1.220     2.23   +23.5%      16.7  identical scores
+cost*cap+steal         1.223     2.23   +23.9%      14.7  identical scores
+cost*cap(no steal)     1.326     2.05   +34.3%       0.0  identical scores
+  cost*cap+steal final per-thread speeds: 0.080 0.080 0.076 0.076 0.086 0.088 0.085 0.089 0.088 0.081 0.086 0.084
+
+### SW length-sorted, one thread per physical core, 5 rounds
+swsearch: 4403 sequences, 1354442 residues (longest 2339), order=sorted, queries of length 150/400/990, threads=10
+sequential (cpu0): 2.726 s for 3 queries = 0.77 GCUPS (billion cell updates per second)
+  raw static             1.055 1.529 1.522 1.573 1.513
+  raw dynamic,1          0.737 1.218 1.046 1.252 1.034
+  raw dynamic,n/8T       0.764 1.234 1.053 1.204 1.175
+  raw guided             1.732 1.827 1.796 2.236 1.790
+  raw steal              0.744 1.019 1.011 0.950 1.174
+  raw share+steal        0.760 1.176 1.186 1.186 1.178
+  raw cost+steal         0.870 1.218 1.185 1.194 1.179
+  raw cost*cap+steal     1.253 1.211 1.195 1.231 1.178
+  raw cost*cap(no steal) 1.262 1.242 1.246 1.224 1.217
+schedule             total_s  speedup   regret    steals  output
+static                 1.522     1.79   +50.5%       0.0  identical scores
+dynamic,1              1.046     2.61    +3.4%       0.0  identical scores
+dynamic,n/8T           1.175     2.32   +16.2%       0.0  identical scores
+guided                 1.796     1.52   +77.6%       0.0  identical scores
+steal                  1.011     2.70    +0.0%      17.3  identical scores
+share+steal            1.178     2.31   +16.6%      19.0  identical scores
+cost+steal             1.185     2.30   +17.2%      18.3  identical scores
+cost*cap+steal         1.211     2.25   +19.8%      17.7  identical scores
+cost*cap(no steal)     1.242     2.20   +22.8%       0.0  identical scores
+  cost*cap+steal final per-thread speeds: 0.124 0.118 0.095 0.095 0.095 0.095 0.094 0.095 0.094 0.094

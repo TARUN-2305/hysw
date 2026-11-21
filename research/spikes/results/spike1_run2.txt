@@ -1,0 +1,8 @@
+cpu=0 kernel=mandel_scalar best_s=0.0736
+cpu=0 kernel=simd_incache best_s=0.0450
+cpu=0 kernel=triad_membound best_s=0.2536
+cpu=0 kernel=gather_random best_s=0.2733
+cpu=4 kernel=mandel_scalar best_s=0.1010
+cpu=4 kernel=simd_incache best_s=0.1126
+cpu=4 kernel=triad_membound best_s=0.2899
+cpu=4 kernel=gather_random best_s=0.5999

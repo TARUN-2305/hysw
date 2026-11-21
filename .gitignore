@@ -1,0 +1,12 @@
+.venv/
+bin/
+build/
+data/*.bin
+data/swissprot*
+results/scratch/
+__pycache__/
+*.tmp
+data/*.fasta
+research/data/
+ChatGPT Image*.png
+*.pyc

@@ -1,0 +1,32 @@
+kernel=uniform N=400000 threads=12 seq_on_cpu0=0.7116s
+static               median=0.1297s min=0.1268s max=0.1401s speedup_vs_seqP=5.49 idle_gap=49% relerr=2.8e-12
+dynamic,1            median=0.1104s min=0.1063s max=0.1116s speedup_vs_seqP=6.45 idle_gap=0% relerr=3.2e-12
+dynamic,N/(64T)      median=0.1079s min=0.1072s max=0.1081s speedup_vs_seqP=6.59 idle_gap=2% relerr=3.2e-12
+guided               median=0.1302s min=0.1127s max=0.1339s speedup_vs_seqP=5.46 idle_gap=26% relerr=3.2e-12
+weighted(2%sample)   median=0.1128s min=0.1083s max=0.1162s speedup_vs_seqP=6.31 idle_gap=8% relerr=3.2e-12
+  measured weights: cpu0=0.124 cpu1=0.117 cpu2=0.123 cpu3=0.124 cpu4=0.064 cpu5=0.064 cpu6=0.064 cpu7=0.064 cpu8=0.064 cpu9=0.064 cpu10=0.064 cpu11=0.064
+
+kernel=fine N=200000000 threads=12 seq_on_cpu0=0.2809s
+static               median=0.0749s min=0.0715s max=0.0755s speedup_vs_seqP=3.75 idle_gap=29% relerr=3.5e-13
+dynamic,1            skipped (2e8 single-iteration dispatches)
+dynamic,N/(64T)      median=0.0715s min=0.0692s max=0.0724s speedup_vs_seqP=3.93 idle_gap=2% relerr=3.5e-13
+guided               median=0.0751s min=0.0685s max=0.0793s speedup_vs_seqP=3.74 idle_gap=0% relerr=3.6e-13
+weighted(2%sample)   median=0.0748s min=0.0713s max=0.0776s speedup_vs_seqP=3.75 idle_gap=5% relerr=3.8e-13
+  measured weights: cpu0=0.098 cpu1=0.099 cpu2=0.097 cpu3=0.103 cpu4=0.076 cpu5=0.076 cpu6=0.076 cpu7=0.076 cpu8=0.073 cpu9=0.076 cpu10=0.076 cpu11=0.076
+
+kernel=triad N=6000 threads=12 seq_on_cpu0=0.0526s
+static               median=0.0691s min=0.0651s max=0.0726s speedup_vs_seqP=0.76 idle_gap=35% relerr=0.0e+00
+dynamic,1            median=0.0709s min=0.0636s max=0.0731s speedup_vs_seqP=0.74 idle_gap=1% relerr=0.0e+00
+dynamic,N/(64T)      median=0.0709s min=0.0695s max=0.0755s speedup_vs_seqP=0.74 idle_gap=1% relerr=0.0e+00
+guided               median=0.0710s min=0.0692s max=0.0731s speedup_vs_seqP=0.74 idle_gap=1% relerr=0.0e+00
+weighted(2%sample)   median=0.0678s min=0.0669s max=0.0692s speedup_vs_seqP=0.78 idle_gap=44% relerr=0.0e+00
+  measured weights: cpu0=0.057 cpu1=0.062 cpu2=0.061 cpu3=0.062 cpu4=0.049 cpu5=0.050 cpu6=0.422 cpu7=0.049 cpu8=0.047 cpu9=0.047 cpu10=0.048 cpu11=0.047
+
+kernel=mandel N=3000 threads=12 seq_on_cpu0=3.9108s
+static               median=1.5988s min=1.5913s max=1.6436s speedup_vs_seqP=2.45 idle_gap=100% relerr=0.0e+00
+dynamic,1            median=0.9136s min=0.6926s max=0.9289s speedup_vs_seqP=4.28 idle_gap=0% relerr=0.0e+00
+dynamic,N/(64T)      median=0.8447s min=0.8417s max=0.8540s speedup_vs_seqP=4.63 idle_gap=0% relerr=0.0e+00
+guided               median=1.0784s min=1.0661s max=1.2055s speedup_vs_seqP=3.63 idle_gap=63% relerr=0.0e+00
+weighted(2%sample)   median=1.5849s min=1.5179s max=1.6788s speedup_vs_seqP=2.47 idle_gap=100% relerr=0.0e+00
+  measured weights: cpu0=0.089 cpu1=0.089 cpu2=0.094 cpu3=0.094 cpu4=0.082 cpu5=0.077 cpu6=0.081 cpu7=0.080 cpu8=0.080 cpu9=0.076 cpu10=0.080 cpu11=0.079
+

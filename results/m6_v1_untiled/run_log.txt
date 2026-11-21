@@ -1,0 +1,182 @@
+4403 records x 20 = 88060 records -> data/ecoli_x20.fasta
+[1/15] round 0 scalar:1:dynamic,1            132.136 s
+[2/15] round 0 simd:1:dynamic,1               10.005 s
+[3/15] round 0 simd:physical:dynamic,1         4.107 s
+[4/15] round 1 simd:physical:dynamic,1         4.141 s
+[5/15] round 1 scalar:1:dynamic,1            131.981 s
+[6/15] round 1 simd:1:dynamic,1               10.905 s
+[7/15] round 2 scalar:1:dynamic,1            129.445 s
+[8/15] round 2 simd:1:dynamic,1               10.133 s
+[9/15] round 2 simd:physical:dynamic,1         4.139 s
+[10/15] round 3 simd:1:dynamic,1               14.994 s
+[11/15] round 3 simd:physical:dynamic,1         4.410 s
+[12/15] round 3 scalar:1:dynamic,1            137.344 s
+[13/15] round 4 scalar:1:dynamic,1            132.700 s
+[14/15] round 4 simd:1:dynamic,1               12.539 s
+[15/15] round 4 simd:physical:dynamic,1         4.980 s
+raw results: results/m6/e1_kernels.csv
+[1/54] round 0 simd:p1:dynamic,1              27.643 s
+[2/54] round 0 simd:all:dynamic,1             21.062 s
+[3/54] round 0 simd:1:dynamic,1               44.827 s
+[4/54] round 0 simd:p:dynamic,1               27.457 s
+[5/54] round 0 simd:e:dynamic,1               26.367 s
+[6/54] round 0 simd:physical:dynamic,1        21.930 s
+[7/54] round 1 simd:physical:dynamic,1        19.484 s
+[8/54] round 1 simd:all:dynamic,1             19.074 s
+[9/54] round 1 simd:e:dynamic,1               24.945 s
+[10/54] round 1 simd:p1:dynamic,1              24.473 s
+[11/54] round 1 simd:1:dynamic,1               38.318 s
+[12/54] round 1 simd:p:dynamic,1               24.944 s
+[13/54] round 2 simd:p1:dynamic,1              25.332 s
+[14/54] round 2 simd:all:dynamic,1             19.536 s
+[15/54] round 2 simd:1:dynamic,1               47.246 s
+[16/54] round 2 simd:p:dynamic,1               26.154 s
+[17/54] round 2 simd:e:dynamic,1               26.031 s
+[18/54] round 2 simd:physical:dynamic,1        22.338 s
+[19/54] round 3 simd:p1:dynamic,1              26.913 s
+[20/54] round 3 simd:e:dynamic,1               25.495 s
+[21/54] round 3 simd:p:dynamic,1               25.775 s
+[22/54] round 3 simd:physical:dynamic,1        22.014 s
+[23/54] round 3 simd:all:dynamic,1             21.752 s
+[24/54] round 3 simd:1:dynamic,1               44.060 s
+[25/54] round 4 simd:e:dynamic,1               26.436 s
+[26/54] round 4 simd:physical:dynamic,1        20.582 s
+[27/54] round 4 simd:p1:dynamic,1              23.593 s
+[28/54] round 4 simd:1:dynamic,1               36.747 s
+[29/54] round 4 simd:p:dynamic,1               25.125 s
+[30/54] round 4 simd:all:dynamic,1             18.552 s
+[31/54] round 5 simd:e:dynamic,1               23.070 s
+[32/54] round 5 simd:physical:dynamic,1        20.272 s
+[33/54] round 5 simd:p1:dynamic,1              23.185 s
+[34/54] round 5 simd:p:dynamic,1               25.669 s
+[35/54] round 5 simd:1:dynamic,1               36.318 s
+[36/54] round 5 simd:all:dynamic,1             17.955 s
+[37/54] round 6 simd:all:dynamic,1             18.138 s
+[38/54] round 6 simd:physical:dynamic,1        18.150 s
+[39/54] round 6 simd:1:dynamic,1               35.069 s
+[40/54] round 6 simd:p1:dynamic,1              23.503 s
+[41/54] round 6 simd:p:dynamic,1               25.836 s
+[42/54] round 6 simd:e:dynamic,1               26.009 s
+[43/54] round 7 simd:1:dynamic,1               37.124 s
+[44/54] round 7 simd:p:dynamic,1               24.091 s
+[45/54] round 7 simd:e:dynamic,1               24.611 s
+[46/54] round 7 simd:p1:dynamic,1              23.907 s
+[47/54] round 7 simd:physical:dynamic,1        19.539 s
+[48/54] round 7 simd:all:dynamic,1             18.952 s
+[49/54] round 8 simd:1:dynamic,1               36.448 s
+[50/54] round 8 simd:all:dynamic,1             19.969 s
+[51/54] round 8 simd:p1:dynamic,1              25.061 s
+[52/54] round 8 simd:physical:dynamic,1        22.674 s
+[53/54] round 8 simd:e:dynamic,1               26.654 s
+[54/54] round 8 simd:p:dynamic,1               25.866 s
+raw results: results/m6/e2_threadsets.csv
+[1/63] round 0 simd:physical:cost+steal       21.669 s
+[2/63] round 0 simd:physical:costcap+steal    21.699 s
+[3/63] round 0 simd:physical:static           24.674 s
+[4/63] round 0 simd:physical:dynamic,1        20.241 s
+[5/63] round 0 simd:physical:dynamic,chunk    19.548 s
+[6/63] round 0 simd:physical:guided           30.900 s
+[7/63] round 0 simd:physical:steal            19.987 s
+[8/63] round 1 simd:physical:cost+steal       21.822 s
+[9/63] round 1 simd:physical:steal            22.169 s
+[10/63] round 1 simd:physical:costcap+steal    19.308 s
+[11/63] round 1 simd:physical:guided           31.339 s
+[12/63] round 1 simd:physical:dynamic,1        21.812 s
+[13/63] round 1 simd:physical:static           24.468 s
+[14/63] round 1 simd:physical:dynamic,chunk    19.810 s
+[15/63] round 2 simd:physical:dynamic,1        18.695 s
+[16/63] round 2 simd:physical:cost+steal       18.689 s
+[17/63] round 2 simd:physical:costcap+steal    19.463 s
+[18/63] round 2 simd:physical:static           22.678 s
+[19/63] round 2 simd:physical:dynamic,chunk    19.721 s
+[20/63] round 2 simd:physical:guided           21.878 s
+[21/63] round 2 simd:physical:steal            19.426 s
+[22/63] round 3 simd:physical:dynamic,1        20.545 s
+[23/63] round 3 simd:physical:guided           30.101 s
+[24/63] round 3 simd:physical:dynamic,chunk    20.982 s
+[25/63] round 3 simd:physical:cost+steal       19.497 s
+[26/63] round 3 simd:physical:steal            18.805 s
+[27/63] round 3 simd:physical:costcap+steal    17.621 s
+[28/63] round 3 simd:physical:static           21.876 s
+[29/63] round 4 simd:physical:guided           22.413 s
+[30/63] round 4 simd:physical:costcap+steal    19.082 s
+[31/63] round 4 simd:physical:dynamic,1        19.645 s
+[32/63] round 4 simd:physical:static           23.285 s
+[33/63] round 4 simd:physical:steal            18.901 s
+[34/63] round 4 simd:physical:dynamic,chunk    20.046 s
+[35/63] round 4 simd:physical:cost+steal       19.799 s
+[36/63] round 5 simd:physical:guided           32.375 s
+[37/63] round 5 simd:physical:steal            20.000 s
+[38/63] round 5 simd:physical:dynamic,1        21.901 s
+[39/63] round 5 simd:physical:dynamic,chunk    21.316 s
+[40/63] round 5 simd:physical:static           25.447 s
+[41/63] round 5 simd:physical:costcap+steal    21.377 s
+[42/63] round 5 simd:physical:cost+steal       20.426 s
+[43/63] round 6 simd:physical:cost+steal       21.265 s
+[44/63] round 6 simd:physical:steal            21.546 s
+[45/63] round 6 simd:physical:static           24.876 s
+[46/63] round 6 simd:physical:dynamic,1        23.215 s
+[47/63] round 6 simd:physical:dynamic,chunk    21.456 s
+[48/63] round 6 simd:physical:guided           33.043 s
+[49/63] round 6 simd:physical:costcap+steal    21.894 s
+[50/63] round 7 simd:physical:static           24.755 s
+[51/63] round 7 simd:physical:dynamic,chunk    21.761 s
+[52/63] round 7 simd:physical:guided           31.219 s
+[53/63] round 7 simd:physical:dynamic,1        20.971 s
+[54/63] round 7 simd:physical:costcap+steal    21.330 s
+[55/63] round 7 simd:physical:steal            20.967 s
+[56/63] round 7 simd:physical:cost+steal       21.251 s
+[57/63] round 8 simd:physical:static           24.104 s
+[58/63] round 8 simd:physical:dynamic,1        20.423 s
+[59/63] round 8 simd:physical:costcap+steal    20.139 s
+[60/63] round 8 simd:physical:steal            20.979 s
+[61/63] round 8 simd:physical:cost+steal       20.112 s
+[62/63] round 8 simd:physical:guided           28.982 s
+[63/63] round 8 simd:physical:dynamic,chunk    22.631 s
+raw results: results/m6/e3_policies.csv
+cool-down 60 s, then 80 passes on cores=physical
+  first pass 29.6 GCUPS, last 13.5 GCUPS
+cool-down 60 s, then 30 passes on cores=1
+  first pass 7.9 GCUPS, last 6.3 GCUPS
+cool-down 60 s, then 80 passes on cores=all
+  first pass 27.2 GCUPS, last 15.0 GCUPS
+wrote results/m6/e4_regime_passes.csv results/m6/e4_regime_samples.csv
+[1/30] round 0 simd:1:dynamic,1:query         12.930 s
+[2/30] round 0 simd:physical:dynamic,1:query    6.816 s
+[3/30] round 0 simd:1:dynamic,1               13.080 s
+[4/30] round 0 simd:4:dynamic,1               23.409 s
+[5/30] round 0 simd:4:dynamic,1:query         22.590 s
+[6/30] round 0 simd:physical:dynamic,1         6.668 s
+[7/30] round 1 simd:physical:dynamic,1         7.694 s
+[8/30] round 1 simd:physical:dynamic,1:query    7.075 s
+[9/30] round 1 simd:4:dynamic,1:query         22.834 s
+[10/30] round 1 simd:1:dynamic,1:query         13.206 s
+[11/30] round 1 simd:1:dynamic,1               13.391 s
+[12/30] round 1 simd:4:dynamic,1               26.597 s
+[13/30] round 2 simd:1:dynamic,1:query         13.519 s
+[14/30] round 2 simd:physical:dynamic,1:query    7.471 s
+[15/30] round 2 simd:1:dynamic,1               15.249 s
+[16/30] round 2 simd:4:dynamic,1               23.924 s
+[17/30] round 2 simd:4:dynamic,1:query         23.712 s
+[18/30] round 2 simd:physical:dynamic,1         6.905 s
+[19/30] round 3 simd:1:dynamic,1:query         12.709 s
+[20/30] round 3 simd:4:dynamic,1:query         22.752 s
+[21/30] round 3 simd:4:dynamic,1               23.385 s
+[22/30] round 3 simd:physical:dynamic,1         6.645 s
+[23/30] round 3 simd:physical:dynamic,1:query    6.545 s
+[24/30] round 3 simd:1:dynamic,1               14.140 s
+[25/30] round 4 simd:4:dynamic,1:query         23.241 s
+[26/30] round 4 simd:physical:dynamic,1         7.224 s
+[27/30] round 4 simd:1:dynamic,1:query         12.746 s
+[28/30] round 4 simd:1:dynamic,1               13.806 s
+[29/30] round 4 simd:4:dynamic,1               26.250 s
+[30/30] round 4 simd:physical:dynamic,1:query    8.096 s
+raw results: results/m6/e5_querylen_profile.csv
+round 0 hysw         48.18 s
+round 0 parasail     43.64 s
+round 1 hysw         43.99 s
+round 1 parasail     40.85 s
+round 2 hysw         42.82 s
+round 2 parasail     42.55 s
+wrote results/m6/e6_parasail.csv
+M6 runs finished: 2026-11-21T01:10:21+05:30

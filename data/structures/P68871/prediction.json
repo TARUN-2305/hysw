@@ -1,0 +1,21 @@
+{
+ "entryId": "AF-P68871-F1",
+ "uniprotAccession": "P68871",
+ "uniprotId": "HBB_HUMAN",
+ "uniprotDescription": "Hemoglobin subunit beta",
+ "organismScientificName": "Homo sapiens",
+ "latestVersion": 6,
+ "modelCreatedDate": "2025-08-01T00:00:00Z",
+ "globalMetricValue": 97.19,
+ "fractionPlddtVeryHigh": 0.973,
+ "fractionPlddtConfident": 0.02,
+ "fractionPlddtLow": 0.007,
+ "fractionPlddtVeryLow": 0.0,
+ "sequence": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+ "sequenceStart": 1,
+ "sequenceEnd": 147,
+ "pdbUrl": "https://alphafold.ebi.ac.uk/files/AF-P68871-F1-model_v6.pdb",
+ "toolUsed": "AlphaFold Monomer v2.0 pipeline",
+ "source": "https://alphafold.ebi.ac.uk/entry/P68871",
+ "attribution": "Predicted structure from the AlphaFold Protein Structure Database (EMBL-EBI and Google DeepMind), CC BY 4.0. A computational prediction, not an experimental structure."
+}

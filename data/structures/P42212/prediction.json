@@ -1,0 +1,21 @@
+{
+ "entryId": "AF-P42212-F1",
+ "uniprotAccession": "P42212",
+ "uniprotId": "GFP_AEQVI",
+ "uniprotDescription": "Green fluorescent protein",
+ "organismScientificName": "Aequorea victoria",
+ "latestVersion": 6,
+ "modelCreatedDate": "2025-08-01T00:00:00Z",
+ "globalMetricValue": 96.62,
+ "fractionPlddtVeryHigh": 0.933,
+ "fractionPlddtConfident": 0.055,
+ "fractionPlddtLow": 0.013,
+ "fractionPlddtVeryLow": 0.0,
+ "sequence": "MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTFSYGVQCFSRYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK",
+ "sequenceStart": 1,
+ "sequenceEnd": 238,
+ "pdbUrl": "https://alphafold.ebi.ac.uk/files/AF-P42212-F1-model_v6.pdb",
+ "toolUsed": "AlphaFold Monomer v2.0 pipeline",
+ "source": "https://alphafold.ebi.ac.uk/entry/P42212",
+ "attribution": "Predicted structure from the AlphaFold Protein Structure Database (EMBL-EBI and Google DeepMind), CC BY 4.0. A computational prediction, not an experimental structure."
+}

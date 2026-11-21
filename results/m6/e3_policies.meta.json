@@ -1,0 +1,116 @@
+{
+ "command": [
+  "bench/run_bench.py",
+  "--db",
+  "data/swissprot_2026_04/swissprot.bin",
+  "--queries",
+  "bench/queries_bench3.fasta",
+  "--rounds",
+  "9",
+  "--set",
+  "policies",
+  "--regime",
+  "sustained",
+  "--out",
+  "results/m6/e3_policies.csv"
+ ],
+ "started": "2026-11-21T16:50:15",
+ "configs": [
+  "simd:physical:static",
+  "simd:physical:dynamic,1",
+  "simd:physical:dynamic,chunk",
+  "simd:physical:guided",
+  "simd:physical:steal",
+  "simd:physical:cost+steal",
+  "simd:physical:costcap+steal"
+ ],
+ "rounds": 9,
+ "regime": "sustained",
+ "seed": 20261120,
+ "condition_s": 2.0,
+ "cooldown_s": 0,
+ "orders": [
+  [
+   "simd:physical:cost+steal",
+   "simd:physical:costcap+steal",
+   "simd:physical:static",
+   "simd:physical:dynamic,1",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:guided",
+   "simd:physical:steal"
+  ],
+  [
+   "simd:physical:cost+steal",
+   "simd:physical:steal",
+   "simd:physical:costcap+steal",
+   "simd:physical:guided",
+   "simd:physical:dynamic,1",
+   "simd:physical:static",
+   "simd:physical:dynamic,chunk"
+  ],
+  [
+   "simd:physical:dynamic,1",
+   "simd:physical:cost+steal",
+   "simd:physical:costcap+steal",
+   "simd:physical:static",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:guided",
+   "simd:physical:steal"
+  ],
+  [
+   "simd:physical:dynamic,1",
+   "simd:physical:guided",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:cost+steal",
+   "simd:physical:steal",
+   "simd:physical:costcap+steal",
+   "simd:physical:static"
+  ],
+  [
+   "simd:physical:guided",
+   "simd:physical:costcap+steal",
+   "simd:physical:dynamic,1",
+   "simd:physical:static",
+   "simd:physical:steal",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:cost+steal"
+  ],
+  [
+   "simd:physical:guided",
+   "simd:physical:steal",
+   "simd:physical:dynamic,1",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:static",
+   "simd:physical:costcap+steal",
+   "simd:physical:cost+steal"
+  ],
+  [
+   "simd:physical:cost+steal",
+   "simd:physical:steal",
+   "simd:physical:static",
+   "simd:physical:dynamic,1",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:guided",
+   "simd:physical:costcap+steal"
+  ],
+  [
+   "simd:physical:static",
+   "simd:physical:dynamic,chunk",
+   "simd:physical:guided",
+   "simd:physical:dynamic,1",
+   "simd:physical:costcap+steal",
+   "simd:physical:steal",
+   "simd:physical:cost+steal"
+  ],
+  [
+   "simd:physical:static",
+   "simd:physical:dynamic,1",
+   "simd:physical:costcap+steal",
+   "simd:physical:steal",
+   "simd:physical:cost+steal",
+   "simd:physical:guided",
+   "simd:physical:dynamic,chunk"
+  ]
+ ],
+ "finished": "2026-11-21T17:13:11"
+}

@@ -1,0 +1,64 @@
+{
+ "command": [
+  "bench/run_bench.py",
+  "--db",
+  "data/swissprot_2026_04/swissprot.bin",
+  "--queries",
+  "tests/queries/q_medium.fasta",
+  "--rounds",
+  "5",
+  "--set",
+  "simd:physical:dynamic,1;simd:all:dynamic,1;simd:e:dynamic,1;simd:p:dynamic,1",
+  "--regime",
+  "burst",
+  "--cooldown",
+  "20",
+  "--out",
+  "results/calibration/e8b_burst_sets.csv"
+ ],
+ "started": "2026-11-21T19:18:20",
+ "configs": [
+  "simd:physical:dynamic,1",
+  "simd:all:dynamic,1",
+  "simd:e:dynamic,1",
+  "simd:p:dynamic,1"
+ ],
+ "rounds": 5,
+ "regime": "burst",
+ "seed": 20261120,
+ "condition_s": 0,
+ "cooldown_s": 20.0,
+ "orders": [
+  [
+   "simd:e:dynamic,1",
+   "simd:physical:dynamic,1",
+   "simd:all:dynamic,1",
+   "simd:p:dynamic,1"
+  ],
+  [
+   "simd:all:dynamic,1",
+   "simd:p:dynamic,1",
+   "simd:physical:dynamic,1",
+   "simd:e:dynamic,1"
+  ],
+  [
+   "simd:e:dynamic,1",
+   "simd:physical:dynamic,1",
+   "simd:all:dynamic,1",
+   "simd:p:dynamic,1"
+  ],
+  [
+   "simd:all:dynamic,1",
+   "simd:e:dynamic,1",
+   "simd:p:dynamic,1",
+   "simd:physical:dynamic,1"
+  ],
+  [
+   "simd:all:dynamic,1",
+   "simd:physical:dynamic,1",
+   "simd:p:dynamic,1",
+   "simd:e:dynamic,1"
+  ]
+ ],
+ "finished": "2026-11-21T19:25:58"
+}

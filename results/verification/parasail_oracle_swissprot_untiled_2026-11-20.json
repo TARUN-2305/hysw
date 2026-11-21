@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-20T23:23:35+0530",
+  "database": "data/swissprot_2026_04/uniprot_sprot.fasta",
+  "queries": "results/scratch/sp_q.fasta",
+  "pairs": 1152146,
+  "identical": 1152146,
+  "matrix_identical": true,
+  "parasail_version": "1.3.4",
+  "compiler": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "pass": true
+}

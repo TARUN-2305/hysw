@@ -1,0 +1,59 @@
+### PAGERANK 50 iterations, all 12 CPUs, 7 rounds
+pagerank: 916428 vertex ids, 5105039 edges, 3580 blocks of 256 vertices (block cost 763..7749), 50 iterations, threads=12
+sequential (cpu0): 0.731 s (14.6 ms per iteration)
+  raw static             0.396 0.502 0.540 0.483 0.520 0.514 0.445
+  raw dynamic,1          0.517 0.467 0.486 0.449 0.447 0.435 0.420
+  raw dynamic,n/8T       0.442 0.419 0.522 0.540 0.473 0.453 0.430
+  raw guided             0.433 0.375 0.488 0.519 0.454 0.419 0.476
+  raw steal              0.437 0.418 0.498 0.465 0.446 0.457 0.452
+  raw share+steal        0.484 0.450 0.483 0.439 0.470 0.457 0.426
+  raw cost+steal         0.428 0.419 0.487 0.481 0.470 0.444 0.478
+  raw cost*cap+steal     0.462 0.428 0.517 0.461 0.430 0.447 0.476
+  raw cost*cap(no steal) 0.559 0.488 0.483 0.611 0.458 0.468 0.445
+schedule             total_s  speedup   regret    steals  output
+static                 0.502     1.46   +11.8%       0.0  bit-identical
+dynamic,1              0.449     1.63    +0.0%       0.0  bit-identical
+dynamic,n/8T           0.453     1.61    +0.8%       0.0  bit-identical
+guided                 0.454     1.61    +1.1%       0.0  bit-identical
+steal                  0.452     1.62    +0.7%      19.3  bit-identical
+share+steal            0.457     1.60    +1.7%      17.9  bit-identical
+cost+steal             0.470     1.56    +4.5%      20.2  bit-identical
+cost*cap+steal         0.461     1.59    +2.6%      19.5  bit-identical
+cost*cap(no steal)     0.483     1.51    +7.5%       0.0  bit-identical
+  cost*cap+steal final per-thread speeds (pull loop): 0.082 0.085 0.090 0.082 0.081 0.078 0.086 0.079 0.082 0.088 0.084 0.083
+
+### PAGERANK 50 iterations, one thread per physical core, 5 rounds
+pagerank: 916428 vertex ids, 5105039 edges, 3580 blocks of 256 vertices (block cost 763..7749), 50 iterations, threads=10
+sequential (cpu0): 0.755 s (15.1 ms per iteration)
+  raw static             0.394 0.395 0.476 0.490 0.492
+  raw dynamic,1          0.345 0.343 0.549 0.428 0.455
+  raw dynamic,n/8T       0.354 0.350 0.348 0.453 0.429
+  raw guided             0.344 0.355 0.396 0.491 0.412
+  raw steal              0.344 0.318 0.358 0.489 0.440
+  raw share+steal        0.562 0.384 0.379 0.454 0.418
+  raw cost+steal         0.451 0.379 0.406 0.403 0.441
+  raw cost*cap+steal     0.348 0.362 0.413 0.421 0.399
+  raw cost*cap(no steal) 0.424 0.390 0.442 0.439 0.447
+schedule             total_s  speedup   regret    steals  output
+static                 0.476     1.59   +34.3%       0.0  bit-identical
+dynamic,1              0.428     1.76   +20.8%       0.0  bit-identical
+dynamic,n/8T           0.354     2.13    +0.0%       0.0  bit-identical
+guided                 0.396     1.91   +11.6%       0.0  bit-identical
+steal                  0.358     2.11    +1.0%      16.4  bit-identical
+share+steal            0.418     1.81   +17.9%      13.1  bit-identical
+cost+steal             0.406     1.86   +14.6%      19.1  bit-identical
+cost*cap+steal         0.399     1.89   +12.5%      13.9  bit-identical
+cost*cap(no steal)     0.439     1.72   +23.9%       0.0  bit-identical
+  cost*cap+steal final per-thread speeds (pull loop): 0.122 0.123 0.098 0.096 0.097 0.092 0.092 0.093 0.094 0.092
+
+### PAGERANK 50 iterations, P-cores only (0,1,2,3), 3 rounds
+pagerank: 916428 vertex ids, 5105039 edges, 3580 blocks of 256 vertices (block cost 763..7749), 50 iterations, threads=4
+sequential (cpu0): 0.849 s (17.0 ms per iteration)
+  raw static             0.445 0.474 0.422
+  raw dynamic,n/8T       0.406 0.399 0.398
+  raw steal              0.401 0.392 0.400
+schedule             total_s  speedup   regret    steals  output
+static                 0.445     1.91   +11.5%       0.0  bit-identical
+dynamic,n/8T           0.399     2.12    +0.0%       0.0  bit-identical
+steal                  0.400     2.12    +0.2%       7.0  bit-identical
+  cost*cap+steal final per-thread speeds (pull loop): -5486124068793688683255936251187209270074392635932332070112001988456197381759672947165175699536362793613284725337872111744958183862744647903224103718245670299614498700710006264535590197791934024641512541262359795191593953928908168990292758500391456212260452596575509589842140073806143686060649302051520512.000 0.000 78870553172144135107248128.000 20788546488417978213719278005535929851559708105537490154453729280.000

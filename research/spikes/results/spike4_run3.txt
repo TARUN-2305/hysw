@@ -1,0 +1,52 @@
+kernel=uniform N=480 sweeps=12 threads=12 seq_per_sweep_on_cpu0=0.433496s
+  raw static              0.077048 0.079359 0.078967 0.108296 0.106767 0.108016 0.109983
+  raw dynamic,1           0.064994 0.065299 0.065885 0.089775 0.088377 0.090702 0.087860
+  raw dynamic,N/(8T)      0.067772 0.068726 0.067247 0.095245 0.107081 0.098667 0.092784
+  raw guided              0.077308 0.077480 0.075176 0.075352 0.111975 0.103431 0.103565
+  raw WS(weighted+steal)  0.065104 0.065080 0.069562 0.088121 0.090381 0.087727 0.087713
+static              per_sweep median=0.106767s min=0.077048s max=0.109983s speedup_vs_seqP=4.06 regret_vs_best=+37.8% checksum=exact
+dynamic,1           per_sweep median=0.087860s min=0.064994s max=0.090702s speedup_vs_seqP=4.93 regret_vs_best=+13.4% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.092784s min=0.067247s max=0.107081s speedup_vs_seqP=4.67 regret_vs_best=+19.8% checksum=exact
+guided              per_sweep median=0.077480s min=0.075176s max=0.111975s speedup_vs_seqP=5.59 regret_vs_best=+0.0% checksum=exact
+WS(weighted+steal)  per_sweep median=0.087713s min=0.065080s max=0.090381s speedup_vs_seqP=4.94 regret_vs_best=+13.2% checksum=exact first_sweep(cold)=0.083346s steals_per_sweep=7.0
+  final weights: 0.116 0.114 0.119 0.119 0.067 0.066 0.067 0.067 0.067 0.066 0.067 0.067
+
+kernel=mandel N=3000 sweeps=8 threads=12 seq_per_sweep_on_cpu0=3.904725s
+  raw static              1.514891 1.562943 1.566373 1.564751 1.624552 1.554426 1.569231
+  raw dynamic,1           0.830810 0.830280 0.803508 0.800030 0.814947 0.840218 0.835844
+  raw dynamic,N/(8T)      0.855235 0.841887 0.831846 0.838697 0.838806 0.843507 0.837112
+  raw guided              1.050399 1.057604 1.057288 1.076295 1.043651 1.048026 1.066251
+  raw WS(weighted+steal)  0.805503 0.804137 0.808205 0.804422 0.822177 0.816560 0.805871
+static              per_sweep median=1.564751s min=1.514891s max=1.624552s speedup_vs_seqP=2.50 regret_vs_best=+94.2% checksum=exact
+dynamic,1           per_sweep median=0.830280s min=0.800030s max=0.840218s speedup_vs_seqP=4.70 regret_vs_best=+3.0% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.838806s min=0.831846s max=0.855235s speedup_vs_seqP=4.66 regret_vs_best=+4.1% checksum=exact
+guided              per_sweep median=1.057288s min=1.043651s max=1.076295s speedup_vs_seqP=3.69 regret_vs_best=+31.2% checksum=exact
+WS(weighted+steal)  per_sweep median=0.805871s min=0.804137s max=0.822177s speedup_vs_seqP=4.85 regret_vs_best=+0.0% checksum=exact first_sweep(cold)=0.706205s steals_per_sweep=19.8
+  final weights: 0.302 0.075 0.047 0.039 0.029 0.029 0.030 0.033 0.042 0.049 0.066 0.259
+
+kernel=jacobi512 N=510 sweeps=2000 threads=12 seq_per_sweep_on_cpu0=0.000143s
+  raw static              0.000058 0.000068 0.000068 0.000069 0.000069 0.000069 0.000067
+  raw dynamic,1           0.000128 0.000126 0.000124 0.000127 0.000126 0.000126 0.000123
+  raw dynamic,N/(8T)      0.000089 0.000094 0.000095 0.000087 0.000091 0.000089 0.000089
+  raw guided              0.000081 0.000087 0.000081 0.000082 0.000083 0.000082 0.000080
+  raw WS(weighted+steal)  0.000067 0.000067 0.000072 0.000071 0.000067 0.000077 0.000070
+static              per_sweep median=0.000068s min=0.000058s max=0.000069s speedup_vs_seqP=2.11 regret_vs_best=+0.0% checksum=exact
+dynamic,1           per_sweep median=0.000126s min=0.000123s max=0.000128s speedup_vs_seqP=1.13 regret_vs_best=+85.8% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.000089s min=0.000087s max=0.000095s speedup_vs_seqP=1.60 regret_vs_best=+31.5% checksum=exact
+guided              per_sweep median=0.000082s min=0.000080s max=0.000087s speedup_vs_seqP=1.75 regret_vs_best=+20.2% checksum=exact
+WS(weighted+steal)  per_sweep median=0.000070s min=0.000067s max=0.000077s speedup_vs_seqP=2.06 regret_vs_best=+2.5% checksum=exact first_sweep(cold)=0.000084s steals_per_sweep=7.6
+  final weights: 0.073 0.090 0.086 0.081 0.087 0.087 0.072 0.085 0.089 0.086 0.087 0.076
+
+kernel=jacobi1024 N=1022 sweeps=500 threads=12 seq_per_sweep_on_cpu0=0.001209s
+  raw static              0.000902 0.000922 0.000959 0.000895 0.000902 0.000867 0.001016
+  raw dynamic,1           0.001947 0.001977 0.001949 0.001917 0.001940 0.001960 0.002017
+  raw dynamic,N/(8T)      0.001097 0.001122 0.001114 0.001089 0.001040 0.001041 0.001112
+  raw guided              0.000942 0.001015 0.000960 0.000966 0.001007 0.000985 0.001094
+  raw WS(weighted+steal)  0.000988 0.000948 0.000946 0.000965 0.000937 0.000956 0.000951
+static              per_sweep median=0.000902s min=0.000867s max=0.001016s speedup_vs_seqP=1.34 regret_vs_best=+0.0% checksum=exact
+dynamic,1           per_sweep median=0.001949s min=0.001917s max=0.002017s speedup_vs_seqP=0.62 regret_vs_best=+116.1% checksum=exact
+dynamic,N/(8T)      per_sweep median=0.001097s min=0.001040s max=0.001122s speedup_vs_seqP=1.10 regret_vs_best=+21.7% checksum=exact
+guided              per_sweep median=0.000985s min=0.000942s max=0.001094s speedup_vs_seqP=1.23 regret_vs_best=+9.2% checksum=exact
+WS(weighted+steal)  per_sweep median=0.000951s min=0.000937s max=0.000988s speedup_vs_seqP=1.27 regret_vs_best=+5.5% checksum=exact first_sweep(cold)=0.001314s steals_per_sweep=13.7
+  final weights: 0.084 0.078 0.084 0.079 0.080 0.085 0.085 0.082 0.087 0.086 0.082 0.087
+

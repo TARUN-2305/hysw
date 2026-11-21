@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HySW — exact protein search</title>
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/app.css">
+<script src="/static/app.js" defer></script>
+<script src="/static/lab.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="name">HySW</span>
+    <span class="tag">exact protein search, SIMD + threads</span>
+  </div>
+  <nav aria-label="Screens">
+    <button type="button" class="tab" data-view="search" aria-current="page">Search</button>
+    <button type="button" class="tab" data-view="lab">Lab</button>
+    <button type="button" class="tab" data-view="setup">Setup</button>
+  </nav>
+</header>
+
+<main>
+<section id="view-search" class="view">
+  <div class="top-grid">
+    <form id="search-form" class="card query-card" novalidate>
+      <div class="field">
+        <div class="label-row">
+          <label for="query">Query protein</label>
+          <span id="qinfo" class="hint" aria-live="polite">Paste letters or one FASTA record</span>
+        </div>
+        <textarea id="query" rows="7" spellcheck="false" autocomplete="off"
+          placeholder="&gt;my_protein&#10;MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLS…"></textarea>
+        <div class="under-query">
+          <div class="examples" id="examples" aria-label="Example proteins"><span class="hint">Examples</span></div>
+          <label class="file-btn">Upload FASTA<input type="file" id="file" accept=".fasta,.fa,.faa,.txt,text/plain"></label>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="database">Database</label><select id="database"></select></div>
+        <div class="field"><label for="topk">Hits to show</label>
+          <select id="topk"><option>10</option><option selected>25</option><option>50</option></select></div>
+      </div>
+      <details class="advanced">
+        <summary>Engine settings</summary>
+        <div class="row2">
+          <div class="field"><label for="mode">Mode</label>
+            <select id="mode">
+              <option value="auto">Auto: SIMD + threads</option>
+              <option value="simd">SIMD, one thread</option>
+              <option value="scalar">Scalar, one thread (slow)</option>
+            </select></div>
+          <div class="field"><label for="cores">Cores</label>
+            <select id="cores">
+              <option value="auto">Auto: one per physical core</option>
+              <option value="all">All logical CPUs</option>
+              <option value="p">P-cores only</option>
+              <option value="e">E-cores only</option>
+            </select></div>
+        </div>
+        <p class="hint" id="adv-note">Auto uses one thread per physical core, the fastest set in the benchmarks (M6 E2, E8).</p>
+      </details>
+      <div class="actions">
+        <button type="submit" class="primary" id="go">Search</button>
+        <button type="button" class="ghost" id="cancel" hidden>Cancel</button>
+      </div>
+      <div id="form-msg" class="msg" role="alert" hidden></div>
+    </form>
+
+    <section class="card run-card" id="run" aria-labelledby="run-title">
+      <h2 id="run-title">Engine activity</h2>
+      <div class="progress" role="progressbar" aria-labelledby="run-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="bar" id="bar"></div>
+      </div>
+      <div class="progress-meta"><span id="pct">Idle</span><span id="elapsed"></span></div>
+      <div class="cores" id="cores-strip" aria-label="Logical CPUs"></div>
+      <p class="hint" id="cores-legend">
+        <span class="key key-p"></span>P-core thread <span class="key key-e"></span>E-core thread
+        <span class="key key-off"></span>not used. Tiles light up as each thread finishes batches of 16 sequences;
+        the fill shows each thread's share of the work. All from the engine's own progress reports.
+      </p>
+    </section>
+  </div>
+
+  <section id="results" hidden aria-labelledby="res-title">
+    <div class="results-head">
+      <h2 id="res-title">Results</h2>
+      <div class="exports">
+        <a class="btn ghost" id="exp-csv" download>Hits (CSV)</a>
+        <a class="btn ghost" id="exp-aln" download>Alignment (text)</a>
+        <a class="btn ghost" id="exp-json" download>Run report (JSON)</a>
+      </div>
+    </div>
+    <div class="summary" id="summary"></div>
+    <p class="hint" id="estimate"></p>
+    <div id="warnings" class="msg warn" hidden></div>
+    <div class="card table-card">
+      <table class="hits" id="hits">
+        <caption class="sr-only">Database proteins most similar to the query, best first</caption>
+        <thead><tr>
+          <th scope="col" class="num">#</th><th scope="col">Accession</th><th scope="col">Protein</th>
+          <th scope="col">Organism</th><th scope="col" class="num">Length</th><th scope="col" class="score-col">Score</th>
+          <th scope="col" class="num">Identity</th><th scope="col" class="num">Query coverage</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <section class="detail" id="detail" aria-labelledby="detail-title" hidden>
+      <div class="detail-head">
+        <h3 id="detail-title"></h3>
+        <div class="aln-stats" id="detail-stats"></div>
+      </div>
+      <div class="detail-grid">
+        <section class="card aln-card" aria-label="Alignment">
+          <div class="card-head">
+            <h4>Alignment</h4>
+            <div class="aln-key"><span class="k-id">identical</span><span class="k-ps">similar</span><span class="k-mm">different</span><span class="k-gp">gap</span></div>
+          </div>
+          <div id="aln"></div>
+          <p class="hint aln-tip">Point at a residue to find it on the structure.</p>
+        </section>
+        <section class="card struct-card" aria-labelledby="struct-title">
+          <div class="card-head">
+            <h4 id="struct-title">Predicted structure</h4>
+            <div class="seg" role="group" aria-label="Colour the structure by" id="struct-mode">
+              <button type="button" data-mode="alignment" aria-pressed="true">Alignment</button>
+              <button type="button" data-mode="plddt" aria-pressed="false">Confidence</button>
+            </div>
+          </div>
+          <div class="viewer-wrap">
+            <div id="viewer" class="viewer" aria-label="Rotatable 3D model of the selected protein. Drag to rotate, scroll to zoom."></div>
+            <div id="viewer-state" class="viewer-state"></div>
+            <div id="viewer-hover" class="viewer-hover" hidden></div>
+          </div>
+          <div class="struct-legend" id="struct-legend"></div>
+          <figure class="pmap-fig">
+            <figcaption class="hint" id="pmap-cap">Whole hit protein, N- to C-terminus</figcaption>
+            <div class="pmap" id="pmap"></div>
+          </figure>
+          <p class="hint struct-note" id="struct-note"></p>
+        </section>
+      </div>
+    </section>
+  </section>
+</section>
+
+<section id="view-lab" class="view" hidden aria-labelledby="lab-title">
+  <div class="lab-head">
+    <div>
+      <h1 id="lab-title">Before and after</h1>
+      <p class="lead">Every speedup in HySW is one change. Each pair puts the same work through both sides: run it live
+        on this laptop, and read the stored, repeated measurement beside it.</p>
+    </div>
+    <div class="field lab-protein"><label for="lab-example">Protein for live runs</label><select id="lab-example"></select></div>
+  </div>
+  <div class="pair-index" role="tablist" aria-label="Comparisons" id="pair-index"></div>
+  <section class="card pair" role="tabpanel" id="pair-panel" aria-labelledby="pair-title">
+    <div class="pair-head">
+      <div>
+        <h2 id="pair-title"></h2>
+        <p class="pair-sub" id="pair-sub"></p>
+      </div>
+      <div class="pair-actions">
+        <span class="hint" id="pair-status" aria-live="polite"></span>
+        <button type="button" class="primary" id="pair-run">Run live</button>
+      </div>
+    </div>
+    <div class="duo">
+      <article class="side" id="side-a"></article>
+      <div class="change" id="pair-change" aria-hidden="true"></div>
+      <article class="side" id="side-b"></article>
+    </div>
+    <p class="prov" id="pair-prov"></p>
+    <div class="pair-extra" id="pair-extra"></div>
+  </section>
+</section>
+
+<section id="view-setup" class="view" hidden>
+  <div class="setup-grid">
+    <section class="card">
+      <h2>Databases</h2>
+      <div id="db-list"></div>
+    </section>
+    <section class="card">
+      <h2>This computer</h2>
+      <dl class="kv" id="hw"></dl>
+    </section>
+    <section class="card wide">
+      <h2>Which cores should a search use?</h2>
+      <p>A short calibration times each thread set on a slice of the database and keeps the default
+        (one thread per physical core) unless another set is more than 5% faster. On this laptop the
+        benchmarks found the default best (M6 E2; E8: 30 of 30 calibrations agreed), so it is optional.</p>
+      <div class="actions"><button type="button" class="ghost" id="calibrate">Calibrate (about 1 second)</button></div>
+      <div id="calib-msg" class="msg" role="status" hidden></div>
+      <div id="calib"></div>
+    </section>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  Exact Smith–Waterman search (BLOSUM62, gap open 12, extend 1), verified against Parasail. Runs only on this computer.
+  Sequence data: UniProt, CC BY 4.0.
+</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-21T20:18:17+0530",
+  "database": "data/ecoli_k12.fasta",
+  "queries": "tests/queries/oracle_set.fasta",
+  "pairs": 35224,
+  "identical": 35224,
+  "matrix_identical": true,
+  "parasail_version": "1.3.4",
+  "compiler": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "pass": true
+}

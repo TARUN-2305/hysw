@@ -1,0 +1,762 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T15:05:09+00:00",
+  "title": "Design System: HySW",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "cssVar": "--bg",
+        "canonical": "#f6f6f3",
+        "dark": "#121211",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252524",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a3",
+          "#c9c9c7",
+          "#eeeeed"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "cssVar": "--surface",
+        "canonical": "#fcfcfb",
+        "dark": "#1b1b1a",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424241",
+          "#616160",
+          "#828281",
+          "#a5a5a4",
+          "#c9c9c8",
+          "#eeeeee"
+        ]
+      },
+      "surface-sunk": {
+        "role": "neutral",
+        "displayName": "Surface Sunk",
+        "cssVar": "--surface-2",
+        "canonical": "#f0efea",
+        "dark": "#242422",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252523",
+          "#43423f",
+          "#62615d",
+          "#83827e",
+          "#a6a5a1",
+          "#cac9c6",
+          "#efeeec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "cssVar": "--line",
+        "canonical": "#e1e0d9",
+        "dark": "#2f2f2d",
+        "tonalRamp": [
+          "#0b0b09",
+          "#262522",
+          "#43423e",
+          "#62615c",
+          "#83827d",
+          "#a6a5a0",
+          "#cac9c5",
+          "#efeeeb"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Rule Strong",
+        "cssVar": "--line-2",
+        "canonical": "#c3c2b7",
+        "dark": "#45443f",
+        "tonalRamp": [
+          "#0c0b08",
+          "#262520",
+          "#43423b",
+          "#626259",
+          "#848379",
+          "#a6a59d",
+          "#cac9c3",
+          "#efefe9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "cssVar": "--ink",
+        "canonical": "#0b0b0b",
+        "dark": "#f1f0ec",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "cssVar": "--ink-2",
+        "canonical": "#52514e",
+        "dark": "#bebdb6",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262523",
+          "#434240",
+          "#62615e",
+          "#83827f",
+          "#a6a5a2",
+          "#cac9c7",
+          "#efeeed"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "cssVar": "--muted",
+        "canonical": "#6b6963",
+        "dark": "#8f8d86",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262522",
+          "#43423e",
+          "#63615c",
+          "#84827d",
+          "#a6a5a0",
+          "#cac9c5",
+          "#efeeeb"
+        ]
+      },
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "cssVar": "--accent / --p",
+        "canonical": "#2a78d6",
+        "dark": "#5b9be6",
+        "tonalRamp": [
+          "#000829",
+          "#002353",
+          "#034082",
+          "#1760b4",
+          "#3d83da",
+          "#6ea7f2",
+          "#9eccff",
+          "#cef2ff"
+        ]
+      },
+      "signal-blue-ink": {
+        "role": "primary",
+        "displayName": "Signal Blue Ink",
+        "cssVar": "--accent-ink",
+        "canonical": "#ffffff",
+        "dark": "#0b0b0b",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "signal-blue-wash": {
+        "role": "primary",
+        "displayName": "Signal Blue Wash",
+        "cssVar": "--accent-soft",
+        "canonical": "#e3eefb",
+        "dark": "#1d2b3d",
+        "tonalRamp": [
+          "#080b0f",
+          "#21262b",
+          "#3c434b",
+          "#5a626c",
+          "#7a838e",
+          "#9ea6af",
+          "#c3cad2",
+          "#eaeff5"
+        ]
+      },
+      "e-core-orange": {
+        "role": "secondary",
+        "displayName": "E Core Orange",
+        "cssVar": "--e",
+        "canonical": "#eb6834",
+        "dark": "#f08a5d",
+        "tonalRamp": [
+          "#230000",
+          "#4c0500",
+          "#781c00",
+          "#a83400",
+          "#cf592a",
+          "#eb8661",
+          "#ffb293",
+          "#ffddc6"
+        ]
+      },
+      "ok-green": {
+        "role": "tertiary",
+        "displayName": "Ok Green",
+        "cssVar": "--ok",
+        "canonical": "#1a8f63",
+        "dark": "#3fbf8c",
+        "tonalRamp": [
+          "#001105",
+          "#002f19",
+          "#005032",
+          "#00744d",
+          "#36976d",
+          "#6db793",
+          "#9ed9ba",
+          "#cffbe3"
+        ]
+      },
+      "warn-wash": {
+        "role": "tertiary",
+        "displayName": "Warn Wash",
+        "cssVar": "--warn-bg",
+        "canonical": "#fff6df",
+        "dark": "#2d2614",
+        "tonalRamp": [
+          "#0e0b05",
+          "#29251a",
+          "#474233",
+          "#68614f",
+          "#89826f",
+          "#aba594",
+          "#cec9bb",
+          "#f2eee4"
+        ]
+      },
+      "warn-line": {
+        "role": "tertiary",
+        "displayName": "Warn Line",
+        "cssVar": "--warn-line",
+        "canonical": "#eda100",
+        "dark": "#c98a00",
+        "tonalRamp": [
+          "#1b0400",
+          "#3f1a00",
+          "#663400",
+          "#905000",
+          "#b57200",
+          "#d29941",
+          "#efc07f",
+          "#ffe8b8"
+        ]
+      },
+      "error-wash": {
+        "role": "tertiary",
+        "displayName": "Error Wash",
+        "cssVar": "--err-bg",
+        "canonical": "#fdecea",
+        "dark": "#331c19",
+        "tonalRamp": [
+          "#0f0a09",
+          "#2a2322",
+          "#493f3e",
+          "#6b5e5c",
+          "#8d7f7d",
+          "#aea2a0",
+          "#d0c6c5",
+          "#f4eceb"
+        ]
+      },
+      "error-line": {
+        "role": "tertiary",
+        "displayName": "Error Line",
+        "cssVar": "--err-line",
+        "canonical": "#c8402f",
+        "dark": "#e0725f",
+        "tonalRamp": [
+          "#240000",
+          "#4d0100",
+          "#7a170d",
+          "#aa2f20",
+          "#d15443",
+          "#ed8271",
+          "#ffaf9f",
+          "#ffdbcf"
+        ]
+      },
+      "aln-identical-wash": {
+        "role": "tertiary",
+        "displayName": "Alignment Identical Wash",
+        "cssVar": "--id-bg",
+        "canonical": "#d6e7fa",
+        "dark": "#1f3a5c",
+        "tonalRamp": [
+          "#070c11",
+          "#1e262e",
+          "#39434f",
+          "#556372",
+          "#768494",
+          "#9aa6b4",
+          "#c0cad6",
+          "#e8eff8"
+        ]
+      },
+      "aln-identical-ink": {
+        "role": "tertiary",
+        "displayName": "Alignment Identical Ink",
+        "cssVar": "--id-ink",
+        "canonical": "#0d3f78",
+        "dark": "#cfe3fb",
+        "tonalRamp": [
+          "#000b1f",
+          "#0b2545",
+          "#20436e",
+          "#37629a",
+          "#5784be",
+          "#81a8da",
+          "#acccf5",
+          "#d9f1ff"
+        ]
+      },
+      "aln-similar-wash": {
+        "role": "tertiary",
+        "displayName": "Alignment Similar Wash",
+        "cssVar": "--pos-bg",
+        "canonical": "#d7f2e6",
+        "dark": "#183b2d",
+        "tonalRamp": [
+          "#060d0a",
+          "#1c2823",
+          "#35463f",
+          "#51675e",
+          "#72887f",
+          "#97aaa2",
+          "#becec6",
+          "#e6f2ec"
+        ]
+      },
+      "aln-similar-ink": {
+        "role": "tertiary",
+        "displayName": "Alignment Similar Ink",
+        "cssVar": "--pos-ink",
+        "canonical": "#0c5a3c",
+        "dark": "#c4ecd9",
+        "tonalRamp": [
+          "#001006",
+          "#052d1c",
+          "#1b4d36",
+          "#316f52",
+          "#539173",
+          "#7fb398",
+          "#abd4be",
+          "#d8f7e6"
+        ]
+      },
+      "aln-gap-ink": {
+        "role": "tertiary",
+        "displayName": "Alignment Gap Ink",
+        "cssVar": "--gap-ink",
+        "canonical": "#a3a199",
+        "dark": "#6d6b65",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#43423d",
+          "#63615a",
+          "#84827b",
+          "#a7a59f",
+          "#cac9c4",
+          "#efeeeb"
+        ]
+      },
+      "struct-rest": {
+        "role": "tertiary",
+        "displayName": "Struct Rest",
+        "cssVar": "--st-rest",
+        "canonical": "#dcdad2",
+        "dark": "#45443f",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#43423d",
+          "#63615b",
+          "#84827c",
+          "#a6a59f",
+          "#cac9c4",
+          "#efeeeb"
+        ]
+      },
+      "struct-identical": {
+        "role": "tertiary",
+        "displayName": "Struct Identical",
+        "cssVar": "--st-id",
+        "canonical": "#2a78d6",
+        "dark": "#5b9be6",
+        "tonalRamp": [
+          "#000829",
+          "#002353",
+          "#034082",
+          "#1760b4",
+          "#3d83da",
+          "#6ea7f2",
+          "#9eccff",
+          "#cef2ff"
+        ]
+      },
+      "struct-similar": {
+        "role": "tertiary",
+        "displayName": "Struct Similar",
+        "cssVar": "--st-ps",
+        "canonical": "#1baf7a",
+        "dark": "#3fbf8c",
+        "tonalRamp": [
+          "#001204",
+          "#003117",
+          "#005330",
+          "#00774a",
+          "#0f9a6a",
+          "#5fba90",
+          "#95dbb8",
+          "#c9fde2"
+        ]
+      },
+      "struct-different": {
+        "role": "tertiary",
+        "displayName": "Struct Different",
+        "cssVar": "--st-mm",
+        "canonical": "#8a857b",
+        "dark": "#a7a197",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272520",
+          "#45423b",
+          "#656158",
+          "#868279",
+          "#a9a59d",
+          "#ccc9c2",
+          "#f1eee9"
+        ]
+      },
+      "struct-marker": {
+        "role": "tertiary",
+        "displayName": "Struct Marker",
+        "cssVar": "--st-mark",
+        "canonical": "#eb6834",
+        "dark": "#f08a5d",
+        "tonalRamp": [
+          "#230000",
+          "#4c0500",
+          "#781c00",
+          "#a83400",
+          "#cf592a",
+          "#eb8661",
+          "#ffb293",
+          "#ffddc6"
+        ]
+      },
+      "plddt-very-high": {
+        "role": "tertiary",
+        "displayName": "pLDDT Very High",
+        "cssVar": "--af-vh",
+        "canonical": "#0053d6",
+        "tonalRamp": [
+          "#000333",
+          "#001c62",
+          "#013896",
+          "#1157ce",
+          "#377bf5",
+          "#68a3ff",
+          "#99c9ff",
+          "#caf0ff"
+        ]
+      },
+      "plddt-confident": {
+        "role": "tertiary",
+        "displayName": "pLDDT Confident",
+        "cssVar": "--af-c",
+        "canonical": "#65cbf3",
+        "tonalRamp": [
+          "#000e1b",
+          "#002b3e",
+          "#004a64",
+          "#006c8d",
+          "#2d8eb1",
+          "#68b0ce",
+          "#9ad3eb",
+          "#ccf6ff"
+        ]
+      },
+      "plddt-low": {
+        "role": "tertiary",
+        "displayName": "pLDDT Low",
+        "cssVar": "--af-l",
+        "canonical": "#ffdb13",
+        "tonalRamp": [
+          "#150800",
+          "#352200",
+          "#583e00",
+          "#7d5d00",
+          "#a07f00",
+          "#bea423",
+          "#deca72",
+          "#feefaf"
+        ]
+      },
+      "plddt-very-low": {
+        "role": "tertiary",
+        "displayName": "pLDDT Very Low",
+        "cssVar": "--af-vl",
+        "canonical": "#ff7d45",
+        "tonalRamp": [
+          "#230000",
+          "#4b0600",
+          "#771e00",
+          "#a73600",
+          "#ce5b26",
+          "#ea875f",
+          "#ffb292",
+          "#ffdec5"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Selection",
+        "cssVar": "--sel",
+        "canonical": "rgb(42 120 214 / 0.22)",
+        "dark": "rgb(91 155 230 / 0.3)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Lab title only."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "The big time or rate on each side of a before/after pair; stat values at 1.45rem."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Pair title and the Results heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card headings, side labels, pair-extra headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Sentences; leads capped at 68 to 80ch."
+      },
+      "hint": {
+        "displayName": "Hint",
+        "purpose": "Helper text, captions, provenance lines, in Muted Ink."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase table headers and stat-tile keys; provenance tags at 0.7rem."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Alignment block, query box, accessions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-whisper",
+        "value": "0 1px 2px rgb(0 0 0 / 0.05), 0 2px 8px rgb(0 0 0 / 0.04)",
+        "purpose": "Cards, current nav tab, pressed segment. Light mode only; none in dark."
+      },
+      {
+        "name": "busy-ring",
+        "value": "inset 0 0 0 2px var(--p | --e)",
+        "purpose": "State ring on a core tile whose thread is working."
+      }
+    ],
+    "motion": [
+      {
+        "name": "progress-linear",
+        "value": "0.1s to 0.15s linear (width/height)",
+        "purpose": "Progress bars, core fills and lane bars tracking engine progress reports."
+      },
+      {
+        "name": "sweep",
+        "value": "1.2s ease-in-out infinite",
+        "purpose": "Indeterminate loading bar; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "detail-stack",
+        "value": "1080px"
+      },
+      {
+        "name": "pair-stack",
+        "value": "900px"
+      },
+      {
+        "name": "grid-stack",
+        "value": "860px"
+      },
+      {
+        "name": "narrow",
+        "value": "520px"
+      }
+    ],
+    "theme": {
+      "dark": "prefers-color-scheme: dark redefines every token except the AlphaFold bands; no manual toggle exists."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action in a region: Search, Run live.",
+      "html": "<button class=\"ds-btn-primary\">Run live</button>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-btn-primary{font:inherit;font-size:.9rem;font-weight:600;min-width:7rem;padding:.5rem 1.1rem;border-radius:8px;background:var(--accent);color:var(--accent-ink);border:1px solid var(--accent);cursor:pointer}.ds-btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.ds-btn-primary:disabled{opacity:.55;cursor:progress}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions: Cancel, Calibrate, exports, replay controls.",
+      "html": "<button class=\"ds-btn-ghost\">Calibrate (about 1 second)</button>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-btn-ghost{font:inherit;font-size:.9rem;padding:.5rem 1.1rem;border-radius:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line-2);cursor:pointer}.ds-btn-ghost:hover{border-color:var(--accent)}.ds-btn-ghost:focus-visible{outline:2px solid var(--accent);outline-offset:1px}"
+    },
+    {
+      "name": "View Switcher",
+      "kind": "nav",
+      "refersTo": "nav-track",
+      "description": "Search / Lab / Setup in a sunk segmented well.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-tab\">Search</button><button class=\"ds-tab\" aria-current=\"page\">Lab</button><button class=\"ds-tab\">Setup</button></nav>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-nav{display:inline-flex;gap:.25rem;background:var(--surface-2);padding:3px;border-radius:9px}.ds-tab{border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:.9rem;padding:.35rem .9rem;border-radius:7px;cursor:pointer}.ds-tab:hover{color:var(--ink)}.ds-tab[aria-current=page]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-weight:600}.ds-tab:focus-visible{outline:2px solid var(--accent);outline-offset:1px}"
+    },
+    {
+      "name": "Query Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labelled monospaced query box with a right-aligned hint.",
+      "html": "<div class=\"ds-field\"><div class=\"ds-lr\"><label for=\"q\">Query protein</label><span class=\"ds-hint\">Paste letters or one FASTA record</span></div><textarea id=\"q\" class=\"ds-input\" rows=\"3\">MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLS</textarea></div>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-field{display:flex;flex-direction:column;gap:.3rem}.ds-lr{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}.ds-lr label{font-weight:600;font-size:.9rem}.ds-hint{color:var(--muted);font-size:.85rem}.ds-input{font:13px/1.45 var(--mono);color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:.5rem .6rem;width:100%;box-sizing:border-box;caret-color:var(--accent);word-break:break-all}.ds-input:focus{outline:2px solid var(--accent);outline-offset:1px}"
+    },
+    {
+      "name": "Pair Index",
+      "kind": "chip",
+      "refersTo": "pair-pill",
+      "description": "Lab comparison picker; the selected pill inverts to ink.",
+      "html": "<div class=\"ds-pairs\" role=\"tablist\"><button class=\"ds-pill\" role=\"tab\" aria-selected=\"true\">Scalar vs SIMD</button><button class=\"ds-pill\" role=\"tab\" aria-selected=\"false\">1 thread vs 10</button><button class=\"ds-pill\" role=\"tab\" aria-selected=\"false\">Burst vs sustained</button></div>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-pairs{display:flex;gap:.4rem;flex-wrap:wrap}.ds-pill{font:inherit;font-size:.88rem;padding:.4rem .95rem;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer}.ds-pill:hover{border-color:var(--ink-2);color:var(--ink)}.ds-pill[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600}.ds-pill:focus-visible{outline:2px solid var(--accent);outline-offset:1px}"
+    },
+    {
+      "name": "Provenance Tags",
+      "kind": "chip",
+      "refersTo": "tag-live",
+      "description": "LIVE, STORED, REPLAY lead every provenance sentence.",
+      "html": "<p class=\"ds-prov\"><span class=\"ds-tag ds-live\">live</span>one run each, on battery. <span class=\"ds-tag ds-stored\">stored</span>M6 E1, 5 rounds. <span class=\"ds-tag ds-replay\">replay</span>real cell values, slowed down.</p>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-prov{font-size:.8rem;color:var(--muted);line-height:1.6}.ds-tag{display:inline-block;font-size:.7rem;font-weight:650;letter-spacing:.04em;text-transform:uppercase;padding:0 .45rem;border-radius:4px;border:1px solid currentColor;margin-right:.35rem}.ds-live{color:var(--accent)}.ds-stored{color:var(--ink-2)}.ds-replay{color:var(--muted)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The one container: panel, rule border, whisper shadow; inner sections split by rules.",
+      "html": "<section class=\"ds-card\"><h2>This computer</h2><dl class=\"ds-kv\"><dt>CPU</dt><dd>12 logical CPUs (2 P-cores, 8 E-cores)</dd><dt>SIMD</dt><dd>AVX2, 16 lanes of 16 bits</dd></dl></section>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;box-shadow:var(--shadow)}.ds-card h2{font-size:1rem;margin:0 0 .75rem}.ds-kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;margin:0;font-size:.9rem}.ds-kv dt{color:var(--muted)}.ds-kv dd{margin:0;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Core Tiles",
+      "kind": "custom",
+      "refersTo": "core-tile",
+      "description": "One tile per logical CPU; P blue, E orange, fill = share of work, dashed = unused.",
+      "html": "<div class=\"ds-cores\"><div class=\"ds-core p busy\"><i style=\"height:40%\"></i><span><b>cpu0</b> P</span><span>773</span></div><div class=\"ds-core e busy\"><i style=\"height:26%\"></i><span><b>cpu4</b> E</span><span>502</span></div><div class=\"ds-core off\"><span><b>cpu1</b> P</span><span>&mdash;</span></div></div>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-cores{display:grid;grid-template-columns:repeat(3,64px);gap:6px}.ds-core{position:relative;height:64px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface-2);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:4px 5px;font-size:.7rem;color:var(--ink-2);font-variant-numeric:tabular-nums}.ds-core i{position:absolute;left:0;right:0;bottom:0;opacity:.28}.ds-core span{position:relative}.ds-core b{color:var(--ink);font-weight:650}.ds-core.p i{background:var(--p)}.ds-core.e i{background:var(--e)}.ds-core.busy.p{box-shadow:inset 0 0 0 2px var(--p)}.ds-core.busy.e{box-shadow:inset 0 0 0 2px var(--e)}.ds-core.off{border-style:dashed;background:transparent;color:var(--muted);opacity:.6}"
+    },
+    {
+      "name": "Before / After Pair",
+      "kind": "custom",
+      "refersTo": "card-pair",
+      "description": "Two sides on the same work joined by a named change; lane strips are the SIMD instrument.",
+      "html": "<div class=\"ds-duo\"><div><p class=\"ds-l\">Scalar, 1 thread</p><p class=\"ds-big\">10.0 s</p><div class=\"ds-lanes\"><i><b style=\"height:100%\"></b></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class=\"ds-change\"><svg viewBox=\"0 0 100 22\" preserveAspectRatio=\"none\"><path d=\"M2 11 H92\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/><path d=\"M84 3 L96 11 L84 19\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"/></svg>16 lanes</div><div><p class=\"ds-l\">SIMD, 1 thread</p><p class=\"ds-big\">1.00 s <small>10.0&times; faster</small></p><div class=\"ds-lanes\"><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i><i><b style=\"height:100%\"></b></i></div></div></div>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-duo{display:grid;grid-template-columns:1fr 6rem 1fr;gap:.5rem;align-items:start}.ds-l{font-weight:650;margin:0}.ds-big{font-size:2.1rem;font-weight:750;line-height:1.15;font-variant-numeric:tabular-nums;margin:.15rem 0 .6rem}.ds-big small{font-size:1rem;font-weight:650;color:var(--accent);margin-left:.4rem}.ds-change{align-self:center;display:flex;flex-direction:column;align-items:center;gap:.35rem;color:var(--accent);font-size:.78rem;font-weight:650}.ds-change svg{width:100%;height:22px;overflow:visible}.ds-lanes{display:flex;gap:7px;height:56px}.ds-lanes i{position:relative;width:6px;border-radius:2px;background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}.ds-lanes b{position:absolute;left:0;right:0;bottom:0;background:var(--accent)}"
+    },
+    {
+      "name": "Alignment Block",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Monospaced residues, one per cell, washed by class; gaps in gap ink.",
+      "html": "<pre class=\"ds-aln\"><span class=\"w\">Query</span><span class=\"n\">1</span> <span class=\"id\">M</span><span class=\"id\">V</span><span class=\"ps\">H</span>L<span class=\"gp\">-</span><span class=\"id\">T</span>\n<span class=\"w\">Hit</span><span class=\"n\">1</span> <span class=\"id\">M</span><span class=\"id\">V</span><span class=\"ps\">Y</span>A<span class=\"gp\">-</span><span class=\"id\">T</span></pre>",
+      "css": ":host{--bg:#f6f6f3;--surface:#fcfcfb;--surface-2:#f0efea;--line:#e1e0d9;--line-2:#c3c2b7;--ink:#0b0b0b;--ink-2:#52514e;--muted:#6b6963;--accent:#2a78d6;--accent-ink:#fff;--accent-soft:#e3eefb;--p:#2a78d6;--e:#eb6834;--radius:10px;--shadow:0 1px 2px rgb(0 0 0 / 0.05),0 2px 8px rgb(0 0 0 / 0.04);--sans:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Ubuntu,sans-serif;--mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;font:15px/1.5 var(--sans);color:var(--ink)} .ds-aln{font:13px/1.5 var(--mono);margin:0}.ds-aln .w{color:var(--muted);display:inline-block;width:6ch}.ds-aln .n{color:var(--muted);display:inline-block;width:3ch;text-align:right}.ds-aln .id{background:#d6e7fa;color:#0d3f78;border-radius:2px}.ds-aln .ps{background:#d7f2e6;color:#0c5a3c;border-radius:2px}.ds-aln .gp{color:#a3a199}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Bench Instrument",
+    "overview": "HySW looks like a well-made piece of lab equipment sitting on a pale bench: an off-white ground, near-white panels separated by hairline rules, black ink, and colour that appears only where it carries a measurement. Everything on screen is a reading. Numbers are set in tabular figures, every figure says whether it came from a live engine run, a stored benchmark or a replay, and the instruments (core tiles, lane strips, timelines, bars, the protein map) are drawn from the engine's own output rather than decorated.\n\nThe colour vocabulary is fixed by the benchmark figures it shares with: blue is P-core work and the gain an \"after\" side wins, orange is E-core work, and everything else is neutral. Biology gets its own, separate vocabularies: alignment classes in pale washes behind monospaced residues, and the four AlphaFold confidence bands exactly as AlphaFold publishes them. Density is moderate: one card per task, generous line length limits, a single 1240px column.\n\nThree views share one world. Search is the working tool (query card, engine activity card, results table, alignment and structure side by side). The Lab arranges each speedup as a controlled pair: before on the left, after on the right, the change named in a column between them. Setup is plain cards and definition lists.",
+    "keyCharacteristics": [
+      "Warm off-white ground with near-white cards on 1px warm-grey rules; dark theme mirrors every token.",
+      "One blue that means P-core, gain and primary action; one orange that means E-core and the pointed-at residue.",
+      "Tabular numerals everywhere a number can change.",
+      "Provenance tags (LIVE, STORED, REPLAY) on every figure that could be mistaken for another kind.",
+      "Instruments built from thin bars and tiles; the 16-lane strip is the signature mark, echoed by the brand mark and icon.",
+      "Flat surfaces with a whisper of shadow in light mode and none in dark."
+    ],
+    "rules": [
+      {
+        "name": "The Benchmark Palette Rule",
+        "body": "Blue is P-core and orange is E-core, everywhere a thread or core is drawn, matching the benchmark figures. No other hue may stand for a core type, and these two may not be reused for unrelated categories inside a core or thread instrument.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gain Is Blue Rule",
+        "body": "On a before/after pair the after side's gain and the change column are Signal Blue; when the change is not an improvement (a loss, or a pair where nothing in the code changes) both fall back to Secondary Ink. A loss is never painted red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Borrowed Vocabulary Rule",
+        "body": "The AlphaFold confidence bands use AlphaFold's own colours and thresholds (90, 70, 50) unchanged in both themes, so a viewer who knows AlphaFold reads them instantly.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number that can change (progress, timings, counts, scores, axis ticks, CPU labels) uses tabular numerals so live updates never jitter.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Residue Per Cell Rule",
+        "body": "In the alignment block every residue occupies exactly one character cell, so the query, the match line and the hit stay in register and a residue's wash or outline never shifts its neighbours.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tone Not Shadow Rule",
+        "body": "Separation is done with Sunk Panel wells and rules. The single shadow never grows on hover and never appears in dark mode.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** label every number on screen as live, stored (with its date and settings) or replay/estimate, using the provenance tags or the words themselves.",
+      "**Do** keep blue for P-core threads and orange for E-core threads in every core, thread or timeline instrument, with a P or E letter or a worded legend beside them.",
+      "**Do** pair every colour key with words: alignment classes, structure modes, confidence bands and core types all carry text labels.",
+      "**Do** set every changing number in tabular figures.",
+      "**Do** separate sections inside a card with a 1px Rule and space.",
+      "**Do** show a comparison as a before/after pair on the same work, with the change named between the sides.",
+      "**Do** mirror every new colour token in the dark theme."
+    ],
+    "donts": [
+      "**Don't** nest a card inside a card; inner groupings use rules, wells or instrument tiles, never another bordered, shadowed panel.",
+      "**Don't** let colour be the only carrier of meaning.",
+      "**Don't** draw an instrument from anything but real engine output or a stored result; an animation that is not data is labelled as an illustration.",
+      "**Don't** introduce a new hue for a core type, a gain or a loss; losses use Secondary Ink, not red.",
+      "**Don't** restyle the AlphaFold confidence colours or thresholds.",
+      "**Don't** use Muted Ink for text the reader must act on.",
+      "**Don't** add shadows in dark mode or grow shadows on hover."
+    ]
+  }
+}

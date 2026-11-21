@@ -1,0 +1,21 @@
+{
+ "entryId": "AF-P01308-F1",
+ "uniprotAccession": "P01308",
+ "uniprotId": "INS_HUMAN",
+ "uniprotDescription": "Insulin",
+ "organismScientificName": "Homo sapiens",
+ "latestVersion": 6,
+ "modelCreatedDate": "2025-08-01T00:00:00Z",
+ "globalMetricValue": 52.91,
+ "fractionPlddtVeryHigh": 0.0,
+ "fractionPlddtConfident": 0.127,
+ "fractionPlddtLow": 0.364,
+ "fractionPlddtVeryLow": 0.509,
+ "sequence": "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN",
+ "sequenceStart": 1,
+ "sequenceEnd": 110,
+ "pdbUrl": "https://alphafold.ebi.ac.uk/files/AF-P01308-F1-model_v6.pdb",
+ "toolUsed": "AlphaFold Monomer v2.0 pipeline",
+ "source": "https://alphafold.ebi.ac.uk/entry/P01308",
+ "attribution": "Predicted structure from the AlphaFold Protein Structure Database (EMBL-EBI and Google DeepMind), CC BY 4.0. A computational prediction, not an experimental structure."
+}

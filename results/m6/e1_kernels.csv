@@ -1,0 +1,16 @@
+round,position,config,kernel,cores,threads,policy,profile,query,query_length,seconds,gcups,rescored,regime,pkg_temp_before_c,timestamp
+0,0,"scalar:1:dynamic,1",scalar,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,116.306239,0.7195,0,sustained,46.0,2026-11-21T16:17:03
+0,1,"simd:1:dynamic,1",simd,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,9.305967,8.9922,0,sustained,55.0,2026-11-21T16:17:14
+0,2,"simd:physical:dynamic,1",simd,physical,10,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,3.614895,23.149,0,sustained,66.0,2026-11-21T16:17:20
+1,0,"simd:physical:dynamic,1",simd,physical,10,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,3.698208,22.6275,0,sustained,53.0,2026-11-21T16:17:25
+1,1,"scalar:1:dynamic,1",scalar,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,117.853149,0.71,0,sustained,54.0,2026-11-21T16:19:25
+1,2,"simd:1:dynamic,1",simd,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,9.302192,8.9958,0,sustained,66.0,2026-11-21T16:19:37
+2,0,"scalar:1:dynamic,1",scalar,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,117.447806,0.7125,0,sustained,69.0,2026-11-21T16:21:36
+2,1,"simd:1:dynamic,1",simd,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,9.26128,9.0356,0,sustained,71.0,2026-11-21T16:21:47
+2,2,"simd:physical:dynamic,1",simd,physical,10,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,3.783651,22.1165,0,sustained,69.0,2026-11-21T16:21:53
+3,0,"simd:1:dynamic,1",simd,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,9.331456,8.9676,0,sustained,57.0,2026-11-21T16:22:04
+3,1,"simd:physical:dynamic,1",simd,physical,10,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,3.734069,22.4102,0,sustained,69.0,2026-11-21T16:22:10
+3,2,"scalar:1:dynamic,1",scalar,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,118.126974,0.7084,0,sustained,58.0,2026-11-21T16:24:10
+4,0,"scalar:1:dynamic,1",scalar,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,119.176661,0.7022,0,sustained,65.0,2026-11-21T16:26:12
+4,1,"simd:1:dynamic,1",simd,1,1,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,9.280244,9.0171,0,sustained,73.0,2026-11-21T16:26:23
+4,2,"simd:physical:dynamic,1",simd,physical,10,"dynamic,1",query,sp|P08506|DACC_ECOLI,400,3.59314,23.2891,0,sustained,66.0,2026-11-21T16:26:28

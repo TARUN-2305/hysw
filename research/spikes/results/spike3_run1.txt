@@ -1,0 +1,23 @@
+jacobi n=512 sweeps=2000 grid=2.1MB(x2) threads=12 seq_on_cpu0=0.1625s
+static             median=0.0950s min=0.0927s max=0.1062s speedup_vs_seqP=1.71 checksum_match=exact
+dynamic,1row       median=0.2228s min=0.2118s max=0.2744s speedup_vs_seqP=0.73 checksum_match=exact
+dynamic,rows/(8T)  median=0.1619s min=0.1484s max=0.2243s speedup_vs_seqP=1.00 checksum_match=exact
+guided             median=0.1375s min=0.1363s max=0.1398s speedup_vs_seqP=1.18 checksum_match=exact
+feedback-weighted  median=0.1027s min=0.0978s max=0.1153s speedup_vs_seqP=1.58 checksum_match=exact
+  final weights: cpu0=0.123 cpu1=0.123 cpu2=0.128 cpu3=0.125 cpu4=0.064 cpu5=0.064 cpu6=0.070 cpu7=0.058 cpu8=0.061 cpu9=0.061 cpu10=0.062 cpu11=0.061
+
+jacobi n=1024 sweeps=500 grid=8.4MB(x2) threads=12 seq_on_cpu0=0.6252s
+static             median=0.6336s min=0.5369s max=0.6460s speedup_vs_seqP=0.99 checksum_match=exact
+dynamic,1row       median=1.0309s min=0.9876s max=1.0585s speedup_vs_seqP=0.61 checksum_match=exact
+dynamic,rows/(8T)  median=0.7302s min=0.6922s max=0.7409s speedup_vs_seqP=0.86 checksum_match=exact
+guided             median=0.6744s min=0.6297s max=0.7001s speedup_vs_seqP=0.93 checksum_match=exact
+feedback-weighted  median=0.5668s min=0.5201s max=0.6236s speedup_vs_seqP=1.10 checksum_match=exact
+  final weights: cpu0=0.079 cpu1=0.075 cpu2=0.085 cpu3=0.081 cpu4=0.086 cpu5=0.087 cpu6=0.086 cpu7=0.079 cpu8=0.083 cpu9=0.086 cpu10=0.088 cpu11=0.086
+
+jacobi n=3000 sweeps=60 grid=72.0MB(x2) threads=12 seq_on_cpu0=0.9020s
+static             median=1.1735s min=1.1617s max=1.2735s speedup_vs_seqP=0.77 checksum_match=exact
+dynamic,1row       median=1.1873s min=1.1830s max=1.2056s speedup_vs_seqP=0.76 checksum_match=exact
+dynamic,rows/(8T)  median=1.2080s min=1.1941s max=1.2217s speedup_vs_seqP=0.75 checksum_match=exact
+guided             median=1.1884s min=1.1809s max=1.2065s speedup_vs_seqP=0.76 checksum_match=exact
+feedback-weighted  median=1.1749s min=1.1692s max=1.1767s speedup_vs_seqP=0.77 checksum_match=exact
+  final weights: cpu0=0.096 cpu1=0.106 cpu2=0.095 cpu3=0.116 cpu4=0.075 cpu5=0.076 cpu6=0.067 cpu7=0.064 cpu8=0.077 cpu9=0.073 cpu10=0.076 cpu11=0.080

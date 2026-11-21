@@ -1,0 +1,6 @@
+gap open=11 extend=1: 201/400 scores equal on the first 400 sequences
+gap open=12 extend=1: 400/400 scores equal on the first 400 sequences
+all 3 queries x 4403 sequences: 13209/13209 scores identical to the C spike (mismatches: 0)
+parasail striped 16-bit (best instruction set auto-selected; AVX2 available), one thread (includes Python call overhead): 0.213 s = 9.79 GCUPS
+one thread, SIMD batches of 16: 0.222 s = 9.42 GCUPS, 12.3x over scalar, scores identical to scalar
+sequential scalar (cpu0): 2.734 s for 3 queries = 0.76 GCUPS (billion cell updates per second)

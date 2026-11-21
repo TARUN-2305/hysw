@@ -1,0 +1,48 @@
+date: 2026-11-21T17:13:24+05:30
+host_kernel: Linux 7.0.0-43-generic x86_64
+cpu_model: 12th Gen Intel(R) Core(TM) i3-1220P
+logical_cpus: 12
+p_core_cpus: 0-3
+e_core_cpus: 4-11
+memory_total_mb: 7117
+memory_available_mb: 4234
+compiler: gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+governor: powersave
+energy_perf_preference: balance_performance
+platform_profile: balanced
+no_turbo: 0
+power_limit_intel-rapl:0_long_term_w: 64.0
+power_limit_intel-rapl:0_long_term_window_s: 28.0
+power_limit_intel-rapl:0_short_term_w: 64.0
+power_limit_intel-rapl-mmio:0_long_term_w: 15.0
+power_limit_intel-rapl-mmio:0_long_term_window_s: 28.0
+power_limit_intel-rapl-mmio:0_short_term_w: 25.0
+energy_counter_readable: no
+perf_event_paranoid: 4
+cpu0_max_mhz: 4400
+cpu1_max_mhz: 4400
+cpu10_max_mhz: 3300
+cpu11_max_mhz: 3300
+cpu2_max_mhz: 4400
+cpu3_max_mhz: 4400
+cpu4_max_mhz: 3300
+cpu5_max_mhz: 3300
+cpu6_max_mhz: 3300
+cpu7_max_mhz: 3300
+cpu8_max_mhz: 3300
+cpu9_max_mhz: 3300
+temp_acpitz_c: 61.0
+temp_INT3400 Thermal_c: 20.0
+temp_TCPU_c: 60.0
+temp_TCPU_PCI_c: 60.0
+temp_x86_pkg_temp_c: 62.0
+temp_SEN1_c: 0.1
+temp_SEN2_c: 0.1
+temp_SEN3_c: 0.1
+temp_SEN4_c: 0.1
+temp_SEN5_c: 0.1
+temp_SEN6_c: 0.1
+temp_SEN7_c: 0.1
+temp_SEN8_c: 0.1
+on_ac_power: 1
+load_average: 10.11 9.90 9.18

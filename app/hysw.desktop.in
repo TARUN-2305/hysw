@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=HySW
+Comment=Exact protein database search with SIMD and threads
+Exec="@ROOT@/app/launch.sh"
+Icon=@ROOT@/app/static/icon.svg
+Terminal=false
+Categories=Science;Biology;Education;
