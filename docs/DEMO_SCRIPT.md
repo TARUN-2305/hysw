@@ -11,7 +11,7 @@ Before recording: laptop **on AC power**, other apps closed, `app/launch.sh`, br
 | 5 | 2:00 | Lab → Scalar vs SIMD → Run live | "Same work, one change. Scalar fills one protein's table at a time; SIMD fills sixteen. Live here: about 10×; measured over repeated runs: 12.7×." |
 | 6 | 2:40 | Inside the vector: Play | "These are real values traced from the kernel: sixteen globins of the same length, filled in lock-step, in the order the tiled kernel computes them." |
 | 7 | 3:15 | 1 thread vs 10 | "Ten cores give only about 2.5× under sustained load. Why? Two reasons, next." |
-| 8 | 3:40 | Static vs dynamic → Run live | "With static shares the fast P-cores finish early and wait. Dynamic scheduling hands out the next batch to whoever is free: every core finishes together." |
+| 8 | 3:40 | Static vs dynamic → Run live | "With static shares every core gets the same number of batches, but not the same work: some finish early and wait for the one holding the longest proteins. Dynamic scheduling hands out the next batch to whoever is free: every core finishes together." |
 | 9 | 4:20 | Burst vs sustained | "And the power wall: after about 17 seconds the laptop's 15-watt limit lowers every core's clock, a 41% drop." |
 | 10 | 4:55 | HySW vs Parasail | "Every score is identical to the Parasail library, over 1.15 million comparisons. On one core HySW is level with it on long queries and faster on short ones." |
 | 11 | 5:30 | Terminal: `tests/run_tests.sh` output (pre-recorded) | "All tests pass, including sanitizers. Everything shown is reproducible from the scripts in the repository." |

@@ -163,21 +163,18 @@ art.chip = (dark = false) => {
 };
 
 // 15. Static vs dynamic timelines
-art.sched = () => {
-  const rows = ["P", "P", "E", "E", "E", "E", "E", "E", "E", "E"];
-  const panel = (y0, dyn) => {
+art.sched = () => {   // real E3 traces (results/m6/e3_trace_*.json): per-thread finish times, 400-letter query
+  const types = ["P", "P", "E", "E", "E", "E", "E", "E", "E", "E"];
+  const st = [4.72, 3.292, 3.785, 3.275, 2.845, 2.415, 1.978, 1.545, 1.124, 0.597], dyn = 3.647, span = 4.72;
+  const panel = (y0, dyn_) => {
     let s = `<g filter="url(#sh)"><rect x="10" y="${y0}" width="840" height="180" rx="16" fill="#fff" stroke="${K.ink}" stroke-width="4"/></g>`;
-    const X = 70, full = 560; // one unit of ideal balanced time
-    rows.forEach((r, i) => { const y = y0 + 40 + i * 13.5, col = r === "P" ? K.blue : K.orange;
+    const X = 70, full = 700;
+    types.forEach((r, i) => { const y = y0 + 40 + i * 13.5, col = r === "P" ? K.blue : K.orange, end = (dyn_ ? dyn : st[i]) / span * full;
       s += txt(48, y + 6, r, 13, K.muted);
-      if (!dyn) { const len = r === "P" ? full * 1.31 / 2 : full * 1.31;
-        s += `<rect x="${X}" y="${y}" width="${len}" height="11" rx="4" fill="${col}"/>`;
-        if (r === "P") s += `<rect x="${X + len}" y="${y}" width="${full * 1.31 - len}" height="11" rx="4" fill="url(#hatch)"/>`;
-      } else { const seg = r === "P" ? 7 : 3.5; let x = X;
-        const n = r === "P" ? 8 : 4; for (let k = 0; k < n; k++) { const w = full / n - 3; s += `<rect x="${x}" y="${y}" width="${w}" height="11" rx="4" fill="${col}"/>`; x += full / n; } }
-    });
-    const endX = X + (dyn ? full : full * 1.31);
-    s += `<line x1="${endX}" y1="${y0 + 34}" x2="${endX}" y2="${y0 + 172}" stroke="${dyn ? K.teal : K.red}" stroke-width="4" stroke-dasharray="8 6"/>`;
+      s += `<rect x="${X}" y="${y}" width="${end}" height="11" rx="4" fill="${col}"/>`;
+      const stop = (dyn_ ? dyn : span) / span * full; if (stop - end > 2) s += `<rect x="${X + end}" y="${y}" width="${stop - end}" height="11" rx="4" fill="url(#hatch)"/>`; });
+    const endX = X + (dyn_ ? dyn : span) / span * full;
+    s += `<line x1="${endX}" y1="${y0 + 34}" x2="${endX}" y2="${y0 + 172}" stroke="${dyn_ ? K.teal : K.red}" stroke-width="4" stroke-dasharray="8 6"/>`;
     return s;
   };
   return svg(860, 400, panel(10, false) + panel(210, true));

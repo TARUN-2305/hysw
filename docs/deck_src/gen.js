@@ -131,15 +131,15 @@ cores.forEach(([c, h, d], i) => { const y = 1.45 + i * 1.05; BOX(5.5, y + .05, .
   T(h, { x: 6.0, y, w: 3.5, h: .35, size: 18, bold: true, color: C.ink }); T(d, { x: 6.0, y: y + .38, w: 3.5, h: .55, size: 14, color: C.muted }); });
 
 // 15 Scheduling
-slide(false, "With static scheduling every thread gets an equal share of batches up front. The P-cores finish their share in about half the time and then wait, while the E-cores are still working: 31 percent more time in total. Dynamic scheduling hands the next batch to whichever thread is free, so fast cores simply do more batches and everyone finishes together. Six smarter policies tied with plain dynamic.");
-title("Equal shares make fast cores wait");
+slide(false, "With static scheduling every thread gets the same number of batches up front, in one contiguous block. The database is sorted by length, so the blocks hold very different amounts of work: in the measured trace one thread finished after 0.6 seconds while the block with the longest proteins kept a P-core busy until 4.7 seconds. That cost 31 percent more time. Dynamic scheduling hands the next batch to whichever thread is free, so every thread finishes together, at 3.65 seconds. Four other dynamic and work-stealing variants tied with it, within 0.8 percent; guided was 48 percent slower.");
+title("Equal shares leave cores waiting");
 IMG("sched", art.sched(), .6, 1.25, 6.2, 2.88);
 kicker("Equal shares (static)", .85, 1.36, 5, C.red); kicker("Next batch to whoever is free (dynamic)", .85, 2.81, 5.6, C.teal);
 stat("+31%", 7.1, 1.4, 2.4, C.red, 48);
 body("time with equal shares", 7.1, 2.25, 2.4, .4, { size: 14 });
 stat("tie", 7.1, 2.85, 2.4, C.teal, 48);
-body("dynamic and six smarter policies all tie", 7.1, 3.7, 2.4, .7, { size: 14 });
-cap("Blue = P-core, orange = E-core, hatched = idle. Measured over 9 rounds.", .6, 4.6, 8.8, .3);
+body("4 other dynamic and stealing variants tie; guided is 48% slower", 7.1, 3.7, 2.4, .8, { size: 13 });
+cap("Real trace, 400-letter query, 10 threads. Blue P-core, orange E-core, hatched idle. +31%: median of 9 rounds.", .6, 4.6, 8.8, .3);
 
 // 16 Hyperthreads
 slide(false, "A P-core can run two threads, hyper-threading, but both threads share the same vector unit. HySW keeps that unit busy with one thread already, so the second thread has nothing to add: one thread per physical core gave 23.7 billion cells per second, all 12 logical CPUs gave 23.3, a tie.");
@@ -203,7 +203,7 @@ body("Live per-core progress, the alignment, and the 3D structure from AlphaFold
 slide(true, "Three lessons, each backed by a measurement in this project.");
 title("Three lessons", true);
 const les = [["a", "Find the independence first", "576,073 independent comparisons made both SIMD and threads possible."],
-  ["b", "On mixed cores, hand out work", "Dynamic scheduling beat equal shares by 31% and tied with six smarter policies."],
+  ["b", "On mixed cores, hand out work", "Dynamic scheduling beat equal shares by 31%; smarter variants only tied."],
   ["c", "On a laptop, power is a resource", "The 15 W limit cut speed 41%. Measure in a controlled power state."]];
 les.forEach(([k, h, d], i) => { const x = .6 + i * 3.0;
   BOX(x, 1.4, 2.75, 3.4, C.night, { round: true }); IMG("icon" + k, art.icon(k), x + .3, 1.65, .9, .9);

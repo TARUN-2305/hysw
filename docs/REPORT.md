@@ -38,7 +38,7 @@ Figures: `results/m6/fig_*.png`, `results/calibration/fig_e8_calibration.png`.
 ## 6. Analysis
 - **SIMD** gives about 13×, not 16×: building the profile, loading columns and the overflow check cost time; a short query cannot amortise them.
 - **Threads** give only 2.5× from 10 cores under sustained load: E-cores are slower than P-cores, hyperthreads share a core's vector unit (no gain), and the 15 W limit lowers every core's clock when all are busy (E4). In the burst regime the same change gives about 4× (E8b: 39 vs 9 GCUPS).
-- **Mapping** matters more than core choice: equal static shares leave P-cores idle while E-cores finish; any dynamic or stealing policy balances them. Cost-aware and capacity-aware variants did not beat simple dynamic(1).
+- **Mapping** matters more than core choice: `static` gives every thread the same number of batches (about 3,600) in contiguous blocks, but the database is sorted by length, so the blocks hold very different amounts of work. In the E3 trace (400-letter query, 10 threads) the first thread finished after 0.6 s and the one holding the longest proteins, a P-core, ran to 4.72 s while the others idled. Any dynamic or stealing policy balances this (all threads end at 3.65 s). Cost-aware and capacity-aware variants did not beat simple dynamic(1).
 - **Memory:** the kernel is compute-bound for the database stream (~400 cells per byte) but its per-thread state was cache-bound for long queries, which tiling fixed.
 
 ## 7. Negative results and limitations
