@@ -1,0 +1,268 @@
+{
+ "title": "HySW: exact protein search on a laptop, from first principles",
+ "voice": "am_michael",
+ "speed": 1.0,
+ "lead": 0.6,
+ "outro": 1.6,
+ "gap": 0.35,
+ "music": "bed",
+ "sources": [
+  "All measurements: PAGP/results (M6 experiments E1-E8, results/verification) on the Intel i3-1220P laptop; see docs/REPORT.md",
+  "Smith, T. F. and Waterman, M. S. (1981) Identification of common molecular subsequences. J. Mol. Biol. 147:195-197",
+  "UniProtKB/Swiss-Prot release 2026_04: 576,073 entries (data/swissprot_2026_04 header)",
+  "Hemoglobin subunit beta, UniProt P68871: 147 residues, begins MVHLTPEEK",
+  "AlphaFold DB (CC BY 4.0) for predicted structures"
+ ],
+ "lines": [
+  {
+   "text": "Say you've just found a new protein, and you want to know what it does."
+  },
+  {
+   "text": "The quickest way to find out is to find its relatives:"
+  },
+  {
+   "text": "known proteins that look like it, because similar proteins usually do similar jobs.",
+   "gap": 0.5
+  },
+  {
+   "text": "A carefully checked database called Swiss-Prot holds about five hundred and seventy-six thousand of them."
+  },
+  {
+   "text": "Comparing yours against every single one, exactly, sounds like a job for a supercomputer.",
+   "gap": 0.45
+  },
+  {
+   "text": "In this video, we'll do it on this laptop, in about a second,"
+  },
+  {
+   "text": "and we'll see exactly where that speed comes from.",
+   "gap": 0.9
+  },
+  {
+   "text": "Let's start from the beginning. A protein is a chain of small building blocks called amino acids."
+  },
+  {
+   "text": "There are twenty kinds, and each one gets a letter,"
+  },
+  {
+   "text": "so a whole protein can be written down as a string of text.",
+   "gap": 0.45
+  },
+  {
+   "text": "Hemoglobin, the protein that carries oxygen in your blood, starts M, V, H, L, T, P,"
+  },
+  {
+   "text": "and runs for a hundred and forty-seven letters.",
+   "gap": 0.9
+  },
+  {
+   "text": "So how do you measure whether two proteins are similar?"
+  },
+  {
+   "text": "You line them up, letter by letter, and keep a score."
+  },
+  {
+   "text": "Matching letters earn points, letters that are chemically alike earn a few,"
+  },
+  {
+   "text": "and where one protein has an extra piece, you insert a gap, which costs points."
+  },
+  {
+   "text": "The best possible line-up gives you the similarity score.",
+   "gap": 0.9
+  },
+  {
+   "text": "Finding that best line-up exactly is a classic problem, solved by Smith and Waterman in nineteen eighty-one."
+  },
+  {
+   "text": "You draw a grid, with one protein along the top and the other down the side."
+  },
+  {
+   "text": "Each cell asks one question: what's the best score that can end right here?"
+  },
+  {
+   "text": "It looks at its neighbours: the diagonal, which adds the score for these two letters,"
+  },
+  {
+   "text": "and the cells above and to the left, which open or extend a gap."
+  },
+  {
+   "text": "If everything is negative, it simply starts again from zero."
+  },
+  {
+   "text": "Fill every cell, and the biggest number anywhere in the grid is your answer.",
+   "gap": 0.9
+  },
+  {
+   "text": "Here's the catch. For a hundred-and-forty-seven-letter query against all of Swiss-Prot,"
+  },
+  {
+   "text": "that grid has thirty point eight billion cells."
+  },
+  {
+   "text": "A plain C program on one core fills about seven hundred million cells a second,"
+  },
+  {
+   "text": "so a single search takes around forty-three seconds."
+  },
+  {
+   "text": "Fast tools like BLAST save time by skipping most of the grid,"
+  },
+  {
+   "text": "and they can miss distant relatives. We don't want to skip anything.",
+   "gap": 0.9
+  },
+  {
+   "text": "The key insight is this: comparing my protein to protein number one tells you nothing about protein number two."
+  },
+  {
+   "text": "Every comparison is independent, and independent work is exactly what parallel hardware is built for."
+  },
+  {
+   "text": "This laptop gives us two ways to use it: go wider, and go more.",
+   "gap": 0.9
+  },
+  {
+   "text": "Wider first. Inside every core are vector registers, two hundred and fifty-six bits wide."
+  },
+  {
+   "text": "A score fits in sixteen bits, so one register holds sixteen scores side by side."
+  },
+  {
+   "text": "We give each of those sixteen lanes a different protein from the database,"
+  },
+  {
+   "text": "so a single add instruction moves sixteen grids forward at once.",
+   "gap": 0.5
+  },
+  {
+   "text": "There's one problem: the lanes move in lockstep, so a batch takes as long as its longest protein."
+  },
+  {
+   "text": "The fix is simple: sort the database by length, so the proteins in a batch are nearly the same size."
+  },
+  {
+   "text": "Wasted lanes drop to under a fifth of one percent.",
+   "gap": 0.5
+  },
+  {
+   "text": "The result: one core goes from point seven one to nine billion cells a second."
+  },
+  {
+   "text": "That's twelve point seven times faster."
+  },
+  {
+   "text": "Not quite sixteen, because some work, like loading data and setting up each batch, doesn't get any wider.",
+   "gap": 0.9
+  },
+  {
+   "text": "Now, go more. This laptop's chip has two kinds of core:"
+  },
+  {
+   "text": "two big performance cores, and eight smaller efficiency cores, each well under half as fast."
+  },
+  {
+   "text": "If you hand every core an equal share up front, some finish early and sit idle, while one is stuck with the longest proteins."
+  },
+  {
+   "text": "In our measurements, that cost thirty-one percent more time."
+  },
+  {
+   "text": "The fix is dynamic scheduling: whenever a core is free, it grabs the next batch,"
+  },
+  {
+   "text": "so every core finishes at the same moment."
+  },
+  {
+   "text": "We also tried six cleverer schemes. None of them beat that simple rule.",
+   "gap": 0.9
+  },
+  {
+   "text": "But ten cores still gave only about two and a half times more speed, not ten. Why?"
+  },
+  {
+   "text": "Partly because hyperthreads add nothing here: two threads on one core share the same vector unit, and it's already busy."
+  },
+  {
+   "text": "And partly because of power. This chip has a fifteen watt limit."
+  },
+  {
+   "text": "For the first seventeen seconds or so it runs flat out,"
+  },
+  {
+   "text": "then the limit kicks in and every core slows down. Speed drops by forty-one percent."
+  },
+  {
+   "text": "So on a laptop, how fast your code runs depends on how long it has been running.",
+   "gap": 0.9
+  },
+  {
+   "text": "Measuring also revealed a surprise. Long queries were twice as slow per cell as short ones."
+  },
+  {
+   "text": "Their working data no longer fit in each core's tiny, fast L1 cache."
+  },
+  {
+   "text": "Processing the grid sixteen columns at a time kept it there,"
+  },
+  {
+   "text": "and long queries got one point five four times faster.",
+   "gap": 0.9
+  },
+  {
+   "text": "Put it all together: twelve point seven times from SIMD, times two point five from threads,"
+  },
+  {
+   "text": "is almost thirty-two times faster than plain C.",
+   "gap": 0.5
+  },
+  {
+   "text": "And speed is worthless if the answer is wrong, so every score was checked against Parasail, an independent library."
+  },
+  {
+   "text": "All one point one five million of them matched exactly.",
+   "gap": 0.9
+  },
+  {
+   "text": "Here's what that looks like for real. This is HySW, running locally in the browser."
+  },
+  {
+   "text": "We pick hemoglobin beta as the query, and press search."
+  },
+  {
+   "text": "Each tile is one CPU core: blue for performance cores, orange for efficiency cores,"
+  },
+  {
+   "text": "lit up by the engine's own progress reports."
+  },
+  {
+   "text": "A moment later, every protein in Swiss-Prot has been scored, and the closest relatives are ranked at the top."
+  },
+  {
+   "text": "Open a result, and you see the alignment, letter by letter,"
+  },
+  {
+   "text": "and the predicted 3D structure from AlphaFold, with the matching region highlighted."
+  },
+  {
+   "text": "And the Performance Lab replays each experiment side by side, so you can check every speedup yourself.",
+   "gap": 0.9
+  },
+  {
+   "text": "So, three lessons. First, look for the independent work. It's what makes parallelism possible."
+  },
+  {
+   "text": "Second, on mixed cores, hand out work as cores become free, not in equal shares."
+  },
+  {
+   "text": "And third, on a laptop, power is a resource, so measure it like one.",
+   "gap": 0.7
+  },
+  {
+   "text": "Exact protein search, on an ordinary laptop, in about a second."
+  },
+  {
+   "text": "The code, the tests and every raw measurement are on GitHub. Thanks for watching."
+  }
+ ]
+}

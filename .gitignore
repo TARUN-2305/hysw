@@ -10,3 +10,13 @@ data/*.fasta
 research/data/
 ChatGPT Image*.png
 *.pyc
+video/demo/frames/
+video/demo/f/
+video/demo/concat.txt
+video/review/
+video/data/*.wav
+video/renders/
+video/demo/demo.mp4
+video/tools/capture.mjs
+video/tools/mix.py
+video/src/core/timing.js
